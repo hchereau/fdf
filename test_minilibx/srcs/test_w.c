@@ -6,7 +6,7 @@
 /*   By: hchereau <hchereau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 13:20:04 by hchereau          #+#    #+#             */
-/*   Updated: 2023/03/12 16:20:02 by hchereau         ###   ########.fr       */
+/*   Updated: 2023/03/18 20:40:14 by hchereau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -169,7 +169,7 @@ int main(void)
     segment.ord_a = 100000;
     segment.abs_b = 100;
     segment.ord_b = 100;
-    
+     
     
     data.mlx = mlx_init();
     data.win = mlx_new_window(data.mlx, 1920, 1080, "segment");
