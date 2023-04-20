@@ -3,6 +3,7 @@ NAME = fdf
 ### LIBFT
 LIBFT_FOLDER += libft/
 LIBFT += $(LIBFT_FOLDER)/libft.a
+
 ### MLX
 
 MLX_FOLDER = minilibx-linux/
@@ -13,7 +14,7 @@ LIB_MLX = $(MLX_FOLDER)/libmlx.a
 PATH_SRCS = srcs/
 
 SRCS += main.c
-SRCS += utils_matrice.C
+SRCS += utils_matrice.c
 
 vpath %.c $(PATH_SRCS)
 ### OBJS
