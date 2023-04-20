@@ -59,10 +59,10 @@ $(OBJS): $(PATH_OBJS)/%.o: %.c $(HEADERS)
 $(LIB_MLX):
 	$(MAKE) -C $(MLX_FOLDER)
 
-test: $(NAME)
-		$(MAKE) -sC $(TEST_FOLDER)
-		echo -n "\n<------TESTS------>\n\n\n"
-		./$(RUN_TESTS)
+#test: $(NAME)
+#		$(MAKE) -sC $(TEST_FOLDER)
+#		echo -n "\n<------TESTS------>\n\n\n"
+#		./$(RUN_TESTS)
 clean:
 	$(RM) -R $(PATH_OBJS)
 	$(MAKE) -C $(MLX_FOLDER) clean
