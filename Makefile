@@ -1,5 +1,8 @@
 NAME = fdf
 
+### LIBFT
+LIBFT_FOLDER += libft/
+LIBFT += $(LIBFT_FOLDER)/libft.a
 ### MLX
 
 MLX_FOLDER = minilibx-linux/
@@ -8,6 +11,9 @@ LIB_MLX = $(MLX_FOLDER)/libmlx.a
 ### SRCS
 
 PATH_SRCS = srcs/
+
+SRCS += main.c
+SRCS += utils_matrice.C
 
 vpath %.c $(PATH_SRCS)
 ### OBJS
@@ -19,9 +25,12 @@ OBJS = $(patsubst %.c, $(PATH_OBJS)/%.o, $(SRCS))
 ### INCLUDES
 
 INCLUDES_FDF = includes/
+INCLUDES_LIBFT += $(LIBFT_FOLDER)/includes/
 INCLUDES_MLX = $(MLX_FOLDER)/
 INCLUDES += -I $(INCLUDES_FDF)
 INCLUDES += -I $(INCLUDES_MLX)
+INCLUDES += -I $(INCLUDES_LIBFT)
+
 HEADERS += $(INCLUDES_FDF)/fdf.h
 
 ### COMPILATION
@@ -49,7 +58,7 @@ RUN_TESTS = $(TEST_FOLDER)/run_test
 
 all: $(NAME)
 
-$(NAME): $(LIB_MLX) $(OBJS)
+$(NAME): $(LIB_MLX) $(LIBFT) $(OBJS)
 	$(CC) $(CFLAGS) $(LINKS) $(OBJS) -o $(NAME) $(LIB_MLX)
 
 $(OBJS): $(PATH_OBJS)/%.o: %.c $(HEADERS)
@@ -58,6 +67,9 @@ $(OBJS): $(PATH_OBJS)/%.o: %.c $(HEADERS)
 
 $(LIB_MLX):
 	$(MAKE) -C $(MLX_FOLDER)
+
+$(LIBFT):
+	$(MAKE) -C $(LIBFT_FOLDER)
 
 #test: $(NAME)
 #		$(MAKE) -sC $(TEST_FOLDER)

@@ -10,4 +10,28 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-get_size_matrice(int fd, )
+#include "fdf.h"
+
+static size_t   word_count(char *str)
+{
+    bool    in_word;
+    size_t  nb_word;
+
+    in_word = false;
+    nb_word = 0;
+    while (str != '\0')
+    {
+        if (str < 9 || str > 13 && str != 32)
+        {
+            if (in_word == false)
+            {
+                ++nb_word;
+                in_word = true;
+            }
+        }
+        else
+            in_word = false;
+        ++str;
+    }
+    return (nb_word);
+}
