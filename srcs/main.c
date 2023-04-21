@@ -6,11 +6,11 @@
 /*   By: hchereau <hchereau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/21 13:17:43 by hchereau          #+#    #+#             */
-/*   Updated: 2023/04/21 13:29:38 by hchereau         ###   ########.fr       */
+/*   Updated: 2023/04/21 22:39:06 by hchereau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-include 
+#include "fdf.h"
 // int main(void)
 // {
 //     int fd;
@@ -24,3 +24,8 @@ include
 //     printf("x = %ld\n y = %ld", matrice.size_x, matrice.size_y);
 //     close(fd);
 // }
+
+int main(void)
+{
+    printf("coucou");
+}

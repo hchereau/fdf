@@ -1,5 +1,9 @@
 NAME = fdf
 
+### MAKEFILE
+
+MAKEFILE = Makefile
+
 ### LIBFT
 LIBFT_FOLDER += libft/
 LIBFT += $(LIBFT_FOLDER)/libft.a
@@ -14,6 +18,7 @@ LIB_MLX = $(MLX_FOLDER)/libmlx.a
 PATH_SRCS = srcs/
 
 SRCS += utils_matrice.c
+SRCS += main.c
 
 vpath %.c $(PATH_SRCS)
 ### OBJS
@@ -59,11 +64,11 @@ RUN_TESTS = $(TEST_FOLDER)/run_test
 all: $(NAME)
 
 $(NAME): $(LIB_MLX) $(LIBFT) $(OBJS)
-	$(CC) $(CFLAGS) $(LINKS) $(OBJS) -o $(NAME) $(LIB_MLX)
+	$(CC) $(CFLAGS) $(OBJS) -o $(NAME) $(INCLUDES) $(LINKS) $(LIB_MLX) $(LIBFT)
 
-$(OBJS): $(PATH_OBJS)/%.o: %.c $(HEADERS)
+$(OBJS): $(PATH_OBJS)/%.o: %.c $(HEADERS) $(MAKEFILE)
 	mkdir -p $(PATH_OBJS)
-	$(CC) $(CFLAGS) -O3 -c $< -o $@ $(INCLUDES)
+	$(CC) $(CFLAGS) -c $< -o $@ $(INCLUDES) -O3
 
 $(LIB_MLX):
 	$(MAKE) -C $(MLX_FOLDER)
@@ -73,7 +78,7 @@ $(LIBFT):
 
 test: $(NAME)
 		$(MAKE) -sC $(TEST_FOLDER)
-		echo -n "\n<------TESTS------>\n\n\n"
+		echo -n "\n<------TESTS------>\n\n"
 		./$(RUN_TESTS)
 clean:
 	$(RM) -R $(PATH_OBJS)
@@ -86,3 +91,4 @@ re: fclean
 	$(MAKE)
 
 .PHONY: all clean fclean re
+.SILENT: test

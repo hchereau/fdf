@@ -1,27 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fdf.h                                              :+:      :+:    :+:   */
+/*   fdf.test.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hchereau <hchereau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/21 19:25:16 by hchereau          #+#    #+#             */
-/*   Updated: 2023/04/21 23:49:09 by hchereau         ###   ########.fr       */
+/*   Created: 2023/04/21 19:29:58 by hchereau          #+#    #+#             */
+/*   Updated: 2023/04/21 22:58:41 by hchereau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FDF_H
-# define FDF_H
+#ifndef FDF_TEST_H
+# define FDF_TEST_H
 
-# include <stdbool.h>
-# include "libft.h"
+# include "fdf.h"
 
-typedef struct s_matrice{
-    size_t  size_y;
-    size_t  size_x;
-    char     **matrice_char;
-}   t_matrice;
+# define GREEN "\033[32;1m"
+# define RED "\033[31;1m"
+# define WHITE "\033[0m"
 
-size_t   word_count(char *str);
+void    count_word_test(void);
+void    check_sizet_eq(const size_t a, const size_t b, const size_t n);
 
 #endif

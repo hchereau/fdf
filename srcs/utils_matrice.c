@@ -6,22 +6,13 @@
 /*   By: hchereau <hchereau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/18 20:44:05 by hchereau          #+#    #+#             */
-/*   Updated: 2023/04/21 16:15:50 by hchereau         ###   ########.fr       */
+/*   Updated: 2023/04/22 00:17:47 by hchereau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft/includes/libft.h"
-#include <stdbool.h>
-#include <stdio.h>
+#include "fdf.h"
 
-typedef struct s_matrice{
-    size_t  size_y;
-    size_t  size_x;
-    char     **matrice_char;
-}   t_matrice;
-
-
-static size_t   word_count(char *str)
+size_t   word_count(char *str)
 {
     bool    in_word;
     size_t  nb_word;
@@ -62,19 +53,19 @@ void    get_size_matrice(int fd, t_matrice *matrice)
     }
 }
 
-void    create_char_matrice(t_matrice *matrice)
-{
-    size_t i;
+// void    create_char_matrice(t_matrice *matrice)
+// {
+//     size_t i;
     
-    i = 0;
-    matrice->matrice_char = (char **)malloc(size_y * sizeof(char));
-    while (i < size_y)
-    {
-        matrice[i] = (char)malloc(size_y * sizeof(char));
-        ft_strlcpy(get_next_line(fd), matrice[i], size_x);
-        ++i;
-    }
-}
+//     i = 0;
+//     matrice->matrice_char = (char **)malloc(size_y * sizeof(char));
+//     while (i < size_y)
+//     {
+//         matrice[i] = (char)malloc(size_y * sizeof(char));
+//         ft_strlcpy(get_next_line(fd), matrice[i], size_x);
+//         ++i;
+//     }
+// }
 
 // int main(void)
 // {

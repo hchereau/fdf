@@ -1,27 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fdf.h                                              :+:      :+:    :+:   */
+/*   utils_matrice.test.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hchereau <hchereau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/21 19:25:16 by hchereau          #+#    #+#             */
-/*   Updated: 2023/04/21 23:49:09 by hchereau         ###   ########.fr       */
+/*   Created: 2023/04/21 19:45:31 by hchereau          #+#    #+#             */
+/*   Updated: 2023/04/22 00:29:16 by hchereau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FDF_H
-# define FDF_H
+#include "fdf.test.h"
 
-# include <stdbool.h>
-# include "libft.h"
+void    count_word_test(void)
+{
+    printf("\nCOUNT_WORD_TEST\n\n");
+    check_sizet_eq(word_count("salut ca va"), 3, 1);
+    check_sizet_eq(word_count(""), 0, 2);
+    check_sizet_eq(word_count("salutaaaaaaaa"), 1, 3);
+    
+}
 
-typedef struct s_matrice{
-    size_t  size_y;
-    size_t  size_x;
-    char     **matrice_char;
-}   t_matrice;
+void get_size_matrice(void)
+{
+    struct s_matrice matrice;
 
-size_t   word_count(char *str);
-
-#endif
+    matrice.size_y = 0;
+    matrice.size_x = 0;
+    
+}

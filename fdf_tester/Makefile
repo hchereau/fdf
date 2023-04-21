@@ -5,15 +5,17 @@ NAME = run_test
 LIBFT_FOLDER += ../libft/
 LIBFT += $(LIBFT_FOLDER)/libft.a
 
-### SRCS
+### SRCS_TEST
 
 PATH_SRCS = srcs/
 
-MAIN_SRCS = $(PATH_SRCS)/main.test.c
-
+SRCS += main.test.c
 SRCS += utils_matrice.test.c
+SRCS += utils.test.c
 
 vpath %.c $(PATH_SRCS)
+
+### OBJS_TEST
 
 ### OBJS
 
@@ -23,27 +25,44 @@ OBJS = $(patsubst %.c, $(PATH_OBJS)/%.o, $(SRCS))
 ### INCLUDES
 
 INCLUDES_LIBFT += $(LIBFT_FOLDER)/includes/
-INCLUDES = -I../
-TEST_INCLUDES = -Iincludes/
-HEADER = $(INCLUDES)/fdf.test.h
+INCLUDES_FDF_TEST += includes/
+INCLUDES_FDF += ../includes/
+INCLUDES += -I $(INCLUDES_LIBFT)
+INCLUDES += -I $(INCLUDES_FDF_TEST)
+INCLUDES += -I $(INCLUDES_FDF)
 
-### FDF
+HEADERS += $(INCLUDES_FDF_TEST)/fdf.test.h
+HEADERS += $(INCLUDES_FDF)/fdf.h
 
-PATH_TEST_SRCS = ../srcs/
+### OBJS_TEST
 
-SRCS_TEST += utils_matrice.c
+PATH_OBJS_TEST = ../objs/
 
-vpath %.c $(PATH_TEST_SRCS)
+OBJS_TEST = $(wildcard $(PATH_OBJS_TEST)/*.o)
+OBJS_TEST := $(filter-out $(PATH_OBJS_TEST)/main.o, $(OBJS_TEST))
 
 ### COMPILATION
 
 CC = clang
 
-CFLAGS += Werror
-CFLAGS += Wextra
-CFLAGS += Wall
+CFLAGS += -Werror
+CFLAGS += -Wextra
+CFLAGS += -Wall
 
 all: $(NAME)
 
-$(NAME): $(OBJS)
-		$(CC) $(CFLAGS) $(SRCS_TEST) $(M)
+$(NAME): $(OBJS) 
+		$(CC) $(CFLAGS) $(OBJS) $(OBJS_TEST) -o $(NAME) $(LIBFT)
+
+$(OBJS): $(PATH_OBJS)/%.o: %.c $(HEADERS)
+			mkdir -p $(PATH_OBJS)
+			$(CC) $(CFLAGS) -c $< -o $@ $(INCLUDES)
+
+clean:
+	$(RM) -R $(PATH_OBJS)
+
+fclean: clean
+		$(RM) $(NAME)
+
+re: fclean
+		$(MAKE)
