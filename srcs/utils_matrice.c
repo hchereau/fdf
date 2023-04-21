@@ -10,7 +10,15 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fdf.h"
+#include "../libft/includes/libft.h"
+#include <stdbool.h>
+#include <stdio.h>
+
+typedef struct s_matrice{
+    size_t  size_y;
+    size_t  size_x;
+}   t_matrice;
+
 
 static size_t   word_count(char *str)
 {
@@ -19,9 +27,12 @@ static size_t   word_count(char *str)
 
     in_word = false;
     nb_word = 0;
-    while (str != '\0')
+
+    if (str == NULL)
+        return (-1);
+    while (*str != '\0')
     {
-        if (str < 9 || str > 13 && str != 32)
+        if ((*str < 9 || *str > 13) && *str != 32)
         {
             if (in_word == false)
             {
@@ -35,3 +46,33 @@ static size_t   word_count(char *str)
     }
     return (nb_word);
 }
+
+void    get_size_matrice(int fd, t_matrice *matrice)
+{
+    char    *gnl; 
+    
+    gnl = get_next_line(fd);
+
+    matrice->size_x = word_count(gnl);
+    while (gnl != NULL)
+    {
+        ++matrice->size_y;
+        gnl = get_next_line(fd);
+    }
+}
+int main(void)
+{
+    int fd;
+    t_matrice matrice;
+
+
+    matrice.size_x = 0;
+    matrice.size_y = 0;
+    fd = open("test.txt", O_RDONLY);
+    get_size_matrice(fd, &matrice);
+    printf("x = %ld\n y = %ld", matrice.size_x, matrice.size_y);
+    close(fd);
+}
+
+
+
