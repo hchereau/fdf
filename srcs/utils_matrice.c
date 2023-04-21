@@ -6,7 +6,7 @@
 /*   By: hchereau <hchereau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/18 20:44:05 by hchereau          #+#    #+#             */
-/*   Updated: 2023/03/18 20:50:42 by hchereau         ###   ########.fr       */
+/*   Updated: 2023/04/21 16:15:50 by hchereau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 typedef struct s_matrice{
     size_t  size_y;
     size_t  size_x;
+    char     **matrice_char;
 }   t_matrice;
 
 
@@ -60,19 +61,34 @@ void    get_size_matrice(int fd, t_matrice *matrice)
         gnl = get_next_line(fd);
     }
 }
-int main(void)
+
+void    create_char_matrice(t_matrice *matrice)
 {
-    int fd;
-    t_matrice matrice;
-
-
-    matrice.size_x = 0;
-    matrice.size_y = 0;
-    fd = open("test.txt", O_RDONLY);
-    get_size_matrice(fd, &matrice);
-    printf("x = %ld\n y = %ld", matrice.size_x, matrice.size_y);
-    close(fd);
+    size_t i;
+    
+    i = 0;
+    matrice->matrice_char = (char **)malloc(size_y * sizeof(char));
+    while (i < size_y)
+    {
+        matrice[i] = (char)malloc(size_y * sizeof(char));
+        ft_strlcpy(get_next_line(fd), matrice[i], size_x);
+        ++i;
+    }
 }
+
+// int main(void)
+// {
+//     int fd;
+//     t_matrice matrice;
+
+
+//     matrice.size_x = 0;
+//     matrice.size_y = 0;
+//     fd = open("test.txt", O_RDONLY);
+//     get_size_matrice(fd, &matrice);
+//     printf("x = %ld\n y = %ld", matrice.size_x, matrice.size_y);
+//     close(fd);
+// }
 
 
 

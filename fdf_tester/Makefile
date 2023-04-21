@@ -1,12 +1,17 @@
 NAME = run_test
 
+### LIBFT
+
+LIBFT_FOLDER += ../libft/
+LIBFT += $(LIBFT_FOLDER)/libft.a
+
 ### SRCS
 
 PATH_SRCS = srcs/
 
 MAIN_SRCS = $(PATH_SRCS)/main.test.c
 
-SRCS += get_size_matrice.test.c
+SRCS += utils_matrice.test.c
 
 vpath %.c $(PATH_SRCS)
 
@@ -17,6 +22,7 @@ OBJS = $(patsubst %.c, $(PATH_OBJS)/%.o, $(SRCS))
 
 ### INCLUDES
 
+INCLUDES_LIBFT += $(LIBFT_FOLDER)/includes/
 INCLUDES = -I../
 TEST_INCLUDES = -Iincludes/
 HEADER = $(INCLUDES)/fdf.test.h
