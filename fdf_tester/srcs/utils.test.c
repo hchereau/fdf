@@ -6,7 +6,7 @@
 /*   By: hchereau <hchereau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/21 19:50:51 by hchereau          #+#    #+#             */
-/*   Updated: 2023/04/22 00:01:22 by hchereau         ###   ########.fr       */
+/*   Updated: 2023/04/22 18:32:54 by hchereau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,23 @@ void    check_sizet_eq(const size_t a, const size_t b, const size_t n)
         printf("%zu : %sOK%s\n", n, GREEN, WHITE);
     else
     {
-        printf("%zu : %sOK%s\n", n, RED, WHITE);
+        printf("%zu : %sKO%s\n", n, RED, WHITE);
         printf("(mine) [%zu] : (expected) [%zu] \n", a, b);
+    }
+}
+
+void    check_matrix_eq(const char **mata, const char **matb, size_t size_y, size_t size_x, const size_t n)
+{
+    bool is_valid;
+    size_t  y;
+    size_t  x;
+    
+    is_valid = true
+    y = 0;
+    x = 0;
+    
+    while(y < size_y)
+    {
+        if ()
     }
 }

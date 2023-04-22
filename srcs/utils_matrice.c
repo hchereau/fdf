@@ -6,7 +6,7 @@
 /*   By: hchereau <hchereau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/18 20:44:05 by hchereau          #+#    #+#             */
-/*   Updated: 2023/04/22 00:17:47 by hchereau         ###   ########.fr       */
+/*   Updated: 2023/04/22 18:23:31 by hchereau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ size_t   word_count(char *str)
     nb_word = 0;
 
     if (str == NULL)
-        return (-1);
+        return (0);
     while (*str != '\0')
     {
         if ((*str < 9 || *str > 13) && *str != 32)
@@ -41,10 +41,9 @@ size_t   word_count(char *str)
 
 void    get_size_matrice(int fd, t_matrice *matrice)
 {
-    char    *gnl; 
+    char    *gnl = NULL; 
     
     gnl = get_next_line(fd);
-
     matrice->size_x = word_count(gnl);
     while (gnl != NULL)
     {
@@ -53,19 +52,19 @@ void    get_size_matrice(int fd, t_matrice *matrice)
     }
 }
 
-// void    create_char_matrice(t_matrice *matrice)
-// {
-//     size_t i;
+void    create_char_matrice(t_matrice *matrice)
+{
+    size_t i;
     
-//     i = 0;
-//     matrice->matrice_char = (char **)malloc(size_y * sizeof(char));
-//     while (i < size_y)
-//     {
-//         matrice[i] = (char)malloc(size_y * sizeof(char));
-//         ft_strlcpy(get_next_line(fd), matrice[i], size_x);
-//         ++i;
-//     }
-// }
+    i = 0;
+    matrice->matrice_char = (char **)malloc(size_y * sizeof(char));
+    while (i < size_y)
+    {
+        matrice[i] = (char)malloc(size_y * sizeof(char));
+        ft_strlcpy(get_next_line(fd), matrice[i], size_x);
+        ++i;
+    }
+}
 
 // int main(void)
 // {
