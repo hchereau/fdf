@@ -6,7 +6,7 @@
 /*   By: hchereau <hchereau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/21 19:29:58 by hchereau          #+#    #+#             */
-/*   Updated: 2023/04/22 15:08:37 by hchereau         ###   ########.fr       */
+/*   Updated: 2023/04/23 11:51:31 by hchereau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@
 
 void    count_word_test(void);
 void    get_size_matrice_test(void);
+void    check_matrix_eq(const char **mata, const char **matb, size_t size_y, size_t size_x, const size_t n);
 void    check_sizet_eq(const size_t a, const size_t b, const size_t n);
 
 #endif

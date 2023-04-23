@@ -6,7 +6,7 @@
 /*   By: hchereau <hchereau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/21 19:50:51 by hchereau          #+#    #+#             */
-/*   Updated: 2023/04/22 18:32:54 by hchereau         ###   ########.fr       */
+/*   Updated: 2023/04/23 11:32:19 by hchereau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,17 @@ void    check_matrix_eq(const char **mata, const char **matb, size_t size_y, siz
     
     while(y < size_y)
     {
-        if ()
+        while(x < size_x)
+        {
+            if (mata[y][x] != matb[y][x])
+            {
+                printf("%zu : %sKO%s\n", n, RED, WHITE);
+                printf("cord (%zu, %zu) | mine [%c] : (expected) [%c] \n", y, x, mata[y][x], matb[y][x]);
+                return ;
+            }
+            ++x;
+        }
+        ++y;   
     }
+    printf("%zu : %sOK%s\n", n, GREEN, WHITE);
 }
