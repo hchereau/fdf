@@ -6,7 +6,7 @@
 /*   By: hchereau <hchereau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/18 20:44:05 by hchereau          #+#    #+#             */
-/*   Updated: 2023/04/23 11:54:22 by hchereau         ###   ########.fr       */
+/*   Updated: 2023/04/23 16:00:52 by hchereau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,18 +54,18 @@ void    get_size_matrice(int fd, t_matrice *matrice)
 
 void    create_char_matrice(int fd, t_matrice *matrice)
 {
-    size_t i;
+    size_t  i;
+    const char **mat = matrice->matrice_char;
     
     i = 0;
     get_size_matrice(fd, matrice);
-    matrice->matrice_char = (char **)malloc(matrice->size_y * sizeof(char));
+    mat = (char **)malloc(matrice->size_y * sizeof(char *));
     while (i < matrice->size_y)
     {
-        matrice->matrice_char[i] = (char *)malloc(matrice->size_x * sizeof(char *));
-        if ()
-        ft_strlcpy(get_next_line(fd), matrice->matrice_char[i], matrice->size_x);
+        mat[i] = (char *)malloc(matrice->size_x * sizeof(char));
+        mat[i] = tri_str_whitespace(get_next_line(fd));
         ++i;
-    }
+   }
 }
 
 // int main(void)

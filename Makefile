@@ -18,6 +18,7 @@ LIB_MLX = $(MLX_FOLDER)/libmlx.a
 PATH_SRCS = srcs/
 
 SRCS += utils_matrice.c
+SRCS += utlils_general.c
 SRCS += main.c
 
 vpath %.c $(PATH_SRCS)
