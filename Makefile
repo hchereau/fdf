@@ -18,7 +18,7 @@ LIB_MLX = $(MLX_FOLDER)/libmlx.a
 PATH_SRCS = srcs/
 
 SRCS += utils_matrice.c
-SRCS += utlils_general.c
+SRCS += ft_csplit.c
 SRCS += main.c
 
 vpath %.c $(PATH_SRCS)
@@ -45,6 +45,7 @@ CC = clang
 CFLAGS += -Werror
 CFLAGS += -Wextra
 CFLAGS += -Wall
+CFLAGS += -g
 
 ifeq ($(debug), true)
 	CFLAGS += -fsanitize=address,undefined -g3

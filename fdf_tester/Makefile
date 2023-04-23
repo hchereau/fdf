@@ -11,6 +11,7 @@ PATH_SRCS = srcs/
 
 SRCS += main.test.c
 SRCS += utils_matrice.test.c
+SRCS += ft_csplit.test.c
 SRCS += utils.test.c
 
 vpath %.c $(PATH_SRCS)

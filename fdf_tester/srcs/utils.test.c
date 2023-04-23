@@ -6,7 +6,7 @@
 /*   By: hchereau <hchereau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/21 19:50:51 by hchereau          #+#    #+#             */
-/*   Updated: 2023/04/23 11:32:19 by hchereau         ###   ########.fr       */
+/*   Updated: 2023/04/23 17:07:11 by hchereau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,33 @@ void    check_sizet_eq(const size_t a, const size_t b, const size_t n)
         printf("%zu : %sKO%s\n", n, RED, WHITE);
         printf("(mine) [%zu] : (expected) [%zu] \n", a, b);
     }
+}
+
+void    check_chain_eq(const char *a, const char *b, const size_t n)
+{
+    size_t  ia;
+    size_t  ib;
+
+    ia = 0;
+    ib = 0;
+    while (a[ia] != '\0' && b[ib] != '\0')
+    {
+        if (ia != ib)
+        {
+            printf("%zu : %sKO%s\n", n, RED, WHITE);
+            printf("(mine) [%c] : (expected) [%c] \n", a[ia], b[ib]);    
+            return ;
+        }
+        ++ia;
+        ++ib;
+    }
+    if (ia == ib)
+        printf("%zu : %sOK%s\n", n, GREEN, WHITE);
+    else
+    {
+            printf("%zu : %sKO%s\n", n, RED, WHITE);
+            printf("size error | (mine) [%zu] : (expected) [%zu] \n", ia, ib);    
+    }   
 }
 
 void    check_matrix_eq(const char **mata, const char **matb, size_t size_y, size_t size_x, const size_t n)

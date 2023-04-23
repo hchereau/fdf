@@ -1,20 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils_general.c                                    :+:      :+:    :+:   */
+/*   ft_csplit.test.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hchereau <hchereau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/23 16:13:58 by hchereau          #+#    #+#             */
-/*   Updated: 2023/04/23 16:34:50 by hchereau         ###   ########.fr       */
+/*   Created: 2023/04/23 16:39:22 by hchereau          #+#    #+#             */
+/*   Updated: 2023/04/23 18:53:32 by hchereau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fdf.h"
+#include "fdf.test.h"
 
-char    *tri_str_whitespace(char *str)
+void    ft_csplit_test(void)
 {
-    char *str_final;
+    char *str1 = "0 0 0 0";
     
-    
+    check_matrix_eq(ft_csplit(str1, " \t\n\b"), [["0"],["0"],["0"],["0"]], 1);
 }
