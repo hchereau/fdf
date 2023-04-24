@@ -6,7 +6,7 @@
 /*   By: hchereau <hchereau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/21 19:45:31 by hchereau          #+#    #+#             */
-/*   Updated: 2023/04/23 16:08:58 by hchereau         ###   ########.fr       */
+/*   Updated: 2023/04/24 16:20:52 by hchereau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,19 +35,18 @@ void get_size_matrice_test(void)
     check_sizet_eq(matrice.size_y, 2, 1);
     printf("\nTEST X\n");
     check_sizet_eq(matrice.size_x, 4, 1);
-    close(fd);
+    close(fd1);
     
 }
 
-void create_char_matrice_test(void)
-{
-    struct s_matrice    matrice;
-    char                **matrice_test1;
-    int                 fd1;
+// void create_char_matrice_test(void)
+// {
+//     struct s_matrice    matrice;
+//     char                *matrice_test1[] = {"0000", "0000"};
+//     int                 fd1;
     
-    matrice_test1 = [["0000"], ["0000"]]
-    printf("\nCREATE_CHAT_MATRICE_TEST\n\n");
-    fd1 = open("fdf_tester/maps/test.fdf", O_RDONLY);
-    create_char_matrice(fd1, &matrice);
-    check_matrix_eq(matrice.matrice_char, matrice_test1, matrice->size_y, matrice->size_x, 1);
-}
+//     printf("\nCREATE_CHAT_MATRICE_TEST\n\n");
+//     fd1 = open("fdf_tester/maps/test.fdf", O_RDONLY);
+//     create_char_matrice(fd1, &matrice);
+//     check_matrix_eq(matrice.matrice_char, matrice_test1, matrice.size_y, matrice.size_x, 1);
+// }

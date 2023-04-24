@@ -6,7 +6,7 @@
 /*   By: hchereau <hchereau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/23 16:39:22 by hchereau          #+#    #+#             */
-/*   Updated: 2023/04/23 18:53:32 by hchereau         ###   ########.fr       */
+/*   Updated: 2023/04/24 17:10:48 by hchereau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 void    ft_csplit_test(void)
 {
     char *str1 = "0 0 0 0";
+    char *rep[] = {"0", "0", "0", "0"};
     
-    check_matrix_eq(ft_csplit(str1, " \t\n\b"), [["0"],["0"],["0"],["0"]], 1);
+    printf("\nFT_CSPLIT_TEST\n\n");
+    check_matrix_eq(ft_csplit(str1, " \t\n\b"), rep, 4, 1, 1);
 }

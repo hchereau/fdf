@@ -45,7 +45,7 @@ CC = clang
 CFLAGS += -Werror
 CFLAGS += -Wextra
 CFLAGS += -Wall
-CFLAGS += -g
+#CFLAGS += -g
 
 ifeq ($(debug), true)
 	CFLAGS += -fsanitize=address,undefined -g3
@@ -57,6 +57,7 @@ LINKS += -lXext
 LINKS += -lX11
 LINKS += -lm
 LINKS += -lz
+LINKS += -fPIE
 
 ### TEST
 

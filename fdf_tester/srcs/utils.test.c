@@ -6,7 +6,7 @@
 /*   By: hchereau <hchereau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/21 19:50:51 by hchereau          #+#    #+#             */
-/*   Updated: 2023/04/23 17:07:11 by hchereau         ###   ########.fr       */
+/*   Updated: 2023/04/24 17:07:14 by hchereau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,13 +50,11 @@ void    check_chain_eq(const char *a, const char *b, const size_t n)
     }   
 }
 
-void    check_matrix_eq(const char **mata, const char **matb, size_t size_y, size_t size_x, const size_t n)
+void    check_matrix_eq(char **mata, char **matb, size_t size_y, size_t size_x, const size_t n)
 {
-    bool is_valid;
     size_t  y;
     size_t  x;
     
-    is_valid = true
     y = 0;
     x = 0;
     
@@ -68,6 +66,7 @@ void    check_matrix_eq(const char **mata, const char **matb, size_t size_y, siz
             {
                 printf("%zu : %sKO%s\n", n, RED, WHITE);
                 printf("cord (%zu, %zu) | mine [%c] : (expected) [%c] \n", y, x, mata[y][x], matb[y][x]);
+                print_matrix(mata);
                 return ;
             }
             ++x;
@@ -75,4 +74,21 @@ void    check_matrix_eq(const char **mata, const char **matb, size_t size_y, siz
         ++y;   
     }
     printf("%zu : %sOK%s\n", n, GREEN, WHITE);
+}
+
+void    print_matrix(char **mat)
+{
+    size_t  y;
+
+    y = 0;
+    printf("(mine_matrix) : \n");
+    while(mat[y] != NULL)
+    {
+        printf("[");
+        ft_putstr_fd(mat[y], 1);
+        printf("]");
+        printf("\n");
+        ++y;
+    }
+    return ;
 }

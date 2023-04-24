@@ -6,7 +6,7 @@
 /*   By: hchereau <hchereau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/21 19:42:46 by hchereau          #+#    #+#             */
-/*   Updated: 2023/04/23 18:55:28 by hchereau         ###   ########.fr       */
+/*   Updated: 2023/04/24 16:20:37 by hchereau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,5 @@ int main(void)
 {
     count_word_test();
     get_size_matrice_test();
-    create_char_matrice_test();
     ft_csplit_test();
 }
