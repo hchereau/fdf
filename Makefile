@@ -86,6 +86,7 @@ test: $(NAME)
 clean:
 	$(RM) -R $(PATH_OBJS)
 	$(MAKE) -C $(MLX_FOLDER) clean
+	
 
 fclean: clean
 	$(RM) $(NAME)
