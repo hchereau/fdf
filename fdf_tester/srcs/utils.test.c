@@ -6,7 +6,7 @@
 /*   By: hchereau <hchereau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/21 19:50:51 by hchereau          #+#    #+#             */
-/*   Updated: 2023/04/24 17:07:14 by hchereau         ###   ########.fr       */
+/*   Updated: 2023/04/24 19:48:39 by hchereau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,10 @@ void    check_matrix_eq(char **mata, char **matb, size_t size_y, size_t size_x, 
             {
                 printf("%zu : %sKO%s\n", n, RED, WHITE);
                 printf("cord (%zu, %zu) | mine [%c] : (expected) [%c] \n", y, x, mata[y][x], matb[y][x]);
+                printf("(mine matrix) : \n");
                 print_matrix(mata);
+                printf("(expected matrix) : \n");
+                print_matrix(matb);
                 return ;
             }
             ++x;
@@ -81,12 +84,11 @@ void    print_matrix(char **mat)
     size_t  y;
 
     y = 0;
-    printf("(mine_matrix) : \n");
     while(mat[y] != NULL)
     {
-        printf("[");
+        ft_putchar_fd('[', 1);
         ft_putstr_fd(mat[y], 1);
-        printf("]");
+        ft_putchar_fd(']', 1);
         printf("\n");
         ++y;
     }

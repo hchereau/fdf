@@ -6,7 +6,7 @@
 /*   By: hchereau <hchereau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/23 16:36:45 by hchereau          #+#    #+#             */
-/*   Updated: 2023/04/24 17:14:38 by hchereau         ###   ########.fr       */
+/*   Updated: 2023/04/24 21:05:03 by hchereau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ static char	*get_next_words(const char **s, char *charset)
 	int		i;
 
 	i = 0;
-	while (!ft_strchr(charset, (*s)[i]))
+	while (ft_strchr(charset, (*s)[i]))
 		i++;
 	(*s) += i;
 	word_len = get_word_len(*s, charset);
@@ -44,14 +44,15 @@ static char	*get_next_words(const char **s, char *charset)
 static size_t	count_words(const char *s, char *charset)
 {
     size_t  size_split;
-//    size_t  i;
+   	size_t  i;
     bool    is_word;
 
+	i = 0;
 	size_split = 0;
 	is_word = false;
-	while (*s != '\0')
+	while (s[i] != '\0')
 	{
-		if (!ft_strchr(charset, (int)*s))
+		if (ft_strchr(charset, s[i]))
 		{
 			if (is_word == true)
 			{
@@ -61,7 +62,7 @@ static size_t	count_words(const char *s, char *charset)
 		}
 		else
 			is_word = true;
-		++s;
+		i++;
 	}
 	return (size_split + (is_word == true));
 }
@@ -88,7 +89,6 @@ char	**ft_csplit(const char *s, char *charset)
 	if (s == NULL)
 		return (NULL);
 	size_split = count_words(s, charset);
-	printf("size_split = %zu", size_split);
 	split = (char **)malloc((size_split + 1) * sizeof(char *));
 	if (split != NULL)
 	{	
