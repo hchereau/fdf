@@ -6,7 +6,7 @@
 /*   By: hchereau <hchereau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/18 20:44:05 by hchereau          #+#    #+#             */
-/*   Updated: 2023/04/26 13:23:59 by hchereau         ###   ########.fr       */
+/*   Updated: 2023/04/29 15:10:49 by hchereau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,10 +52,10 @@ void    get_size_matrice(int fd, t_matrice *matrice)
     }
 }
 
-void    create_char_matrice(int fd, t_matrice *matrice)
-{
+// void    create_char_matrice(int fd, t_matrice *matrice)
+// {
     
-}
+// }
 
 // int main(void)
 // {
