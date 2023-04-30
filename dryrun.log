@@ -1,0 +1,107 @@
+make --dry-run --always-make --keep-going --print-directory
+make: Entering directory '/home/hchereau/Documents/fdf'
+make -C minilibx-linux/
+make[1]: Entering directory '/home/hchereau/Documents/fdf/minilibx-linux'
+./configure
+make[1]: Leaving directory '/home/hchereau/Documents/fdf/minilibx-linux'
+make -C libft/
+make[1]: Entering directory '/home/hchereau/Documents/fdf/libft'
+mkdir -p objs/
+clang -Werror -Wextra -Wall -g -fPIE -c srcs/ft_isalpha.c -o objs//ft_isalpha.o -Iincludes/
+mkdir -p objs/
+clang -Werror -Wextra -Wall -g -fPIE -c srcs/ft_isdigit.c -o objs//ft_isdigit.o -Iincludes/
+mkdir -p objs/
+clang -Werror -Wextra -Wall -g -fPIE -c srcs/ft_isalnum.c -o objs//ft_isalnum.o -Iincludes/
+mkdir -p objs/
+clang -Werror -Wextra -Wall -g -fPIE -c srcs/ft_isascii.c -o objs//ft_isascii.o -Iincludes/
+mkdir -p objs/
+clang -Werror -Wextra -Wall -g -fPIE -c srcs/ft_isprint.c -o objs//ft_isprint.o -Iincludes/
+mkdir -p objs/
+clang -Werror -Wextra -Wall -g -fPIE -c srcs/ft_strlen.c -o objs//ft_strlen.o -Iincludes/
+mkdir -p objs/
+clang -Werror -Wextra -Wall -g -fPIE -c srcs/ft_memset.c -o objs//ft_memset.o -Iincludes/
+mkdir -p objs/
+clang -Werror -Wextra -Wall -g -fPIE -c srcs/ft_bzero.c -o objs//ft_bzero.o -Iincludes/
+mkdir -p objs/
+clang -Werror -Wextra -Wall -g -fPIE -c srcs/ft_memcpy.c -o objs//ft_memcpy.o -Iincludes/
+mkdir -p objs/
+clang -Werror -Wextra -Wall -g -fPIE -c srcs/ft_memmove.c -o objs//ft_memmove.o -Iincludes/
+mkdir -p objs/
+clang -Werror -Wextra -Wall -g -fPIE -c srcs/ft_strlcpy.c -o objs//ft_strlcpy.o -Iincludes/
+mkdir -p objs/
+clang -Werror -Wextra -Wall -g -fPIE -c srcs/ft_strlcat.c -o objs//ft_strlcat.o -Iincludes/
+mkdir -p objs/
+clang -Werror -Wextra -Wall -g -fPIE -c srcs/ft_toupper.c -o objs//ft_toupper.o -Iincludes/
+mkdir -p objs/
+clang -Werror -Wextra -Wall -g -fPIE -c srcs/ft_tolower.c -o objs//ft_tolower.o -Iincludes/
+mkdir -p objs/
+clang -Werror -Wextra -Wall -g -fPIE -c srcs/ft_strchr.c -o objs//ft_strchr.o -Iincludes/
+mkdir -p objs/
+clang -Werror -Wextra -Wall -g -fPIE -c srcs/ft_strrchr.c -o objs//ft_strrchr.o -Iincludes/
+mkdir -p objs/
+clang -Werror -Wextra -Wall -g -fPIE -c srcs/ft_strncmp.c -o objs//ft_strncmp.o -Iincludes/
+mkdir -p objs/
+clang -Werror -Wextra -Wall -g -fPIE -c srcs/ft_memchr.c -o objs//ft_memchr.o -Iincludes/
+mkdir -p objs/
+clang -Werror -Wextra -Wall -g -fPIE -c srcs/ft_memcmp.c -o objs//ft_memcmp.o -Iincludes/
+mkdir -p objs/
+clang -Werror -Wextra -Wall -g -fPIE -c srcs/ft_substr.c -o objs//ft_substr.o -Iincludes/
+mkdir -p objs/
+clang -Werror -Wextra -Wall -g -fPIE -c srcs/ft_strjoin.c -o objs//ft_strjoin.o -Iincludes/
+mkdir -p objs/
+clang -Werror -Wextra -Wall -g -fPIE -c srcs/ft_strtrim.c -o objs//ft_strtrim.o -Iincludes/
+mkdir -p objs/
+clang -Werror -Wextra -Wall -g -fPIE -c srcs/ft_strnstr.c -o objs//ft_strnstr.o -Iincludes/
+mkdir -p objs/
+clang -Werror -Wextra -Wall -g -fPIE -c srcs/ft_split.c -o objs//ft_split.o -Iincludes/
+mkdir -p objs/
+clang -Werror -Wextra -Wall -g -fPIE -c srcs/ft_itoa.c -o objs//ft_itoa.o -Iincludes/
+mkdir -p objs/
+clang -Werror -Wextra -Wall -g -fPIE -c srcs/ft_strmapi.c -o objs//ft_strmapi.o -Iincludes/
+mkdir -p objs/
+clang -Werror -Wextra -Wall -g -fPIE -c srcs/ft_striteri.c -o objs//ft_striteri.o -Iincludes/
+mkdir -p objs/
+clang -Werror -Wextra -Wall -g -fPIE -c srcs/ft_putchar_fd.c -o objs//ft_putchar_fd.o -Iincludes/
+mkdir -p objs/
+clang -Werror -Wextra -Wall -g -fPIE -c srcs/ft_putstr_fd.c -o objs//ft_putstr_fd.o -Iincludes/
+mkdir -p objs/
+clang -Werror -Wextra -Wall -g -fPIE -c srcs/ft_putendl_fd.c -o objs//ft_putendl_fd.o -Iincludes/
+mkdir -p objs/
+clang -Werror -Wextra -Wall -g -fPIE -c srcs/ft_putnbr_fd.c -o objs//ft_putnbr_fd.o -Iincludes/
+mkdir -p objs/
+clang -Werror -Wextra -Wall -g -fPIE -c srcs/ft_strdup.c -o objs//ft_strdup.o -Iincludes/
+mkdir -p objs/
+clang -Werror -Wextra -Wall -g -fPIE -c srcs/ft_atoi.c -o objs//ft_atoi.o -Iincludes/
+mkdir -p objs/
+clang -Werror -Wextra -Wall -g -fPIE -c srcs/ft_calloc.c -o objs//ft_calloc.o -Iincludes/
+mkdir -p objs/
+clang -Werror -Wextra -Wall -g -fPIE -c srcs/get_next_line.c -o objs//get_next_line.o -Iincludes/
+mkdir -p objs/
+clang -Werror -Wextra -Wall -g -fPIE -c srcs/get_next_line_utils.c -o objs//get_next_line_utils.o -Iincludes/
+mkdir -p objs/
+clang -Werror -Wextra -Wall -g -fPIE -c srcs/add_to_file_string.c -o objs//add_to_file_string.o -Iincludes/
+mkdir -p objs/
+clang -Werror -Wextra -Wall -g -fPIE -c srcs/ft_printf.c -o objs//ft_printf.o -Iincludes/
+mkdir -p objs/
+clang -Werror -Wextra -Wall -g -fPIE -c srcs/ft_uitoa.c -o objs//ft_uitoa.o -Iincludes/
+mkdir -p objs/
+clang -Werror -Wextra -Wall -g -fPIE -c srcs/utils.c -o objs//utils.o -Iincludes/
+mkdir -p objs/
+clang -Werror -Wextra -Wall -g -fPIE -c srcs/utils_buffer.c -o objs//utils_buffer.o -Iincludes/
+mkdir -p objs/
+clang -Werror -Wextra -Wall -g -fPIE -c srcs/utils_num.c -o objs//utils_num.o -Iincludes/
+mkdir -p objs/
+clang -Werror -Wextra -Wall -g -fPIE -c srcs/utils_pointeur.c -o objs//utils_pointeur.o -Iincludes/
+mkdir -p objs/
+clang -Werror -Wextra -Wall -g -fPIE -c srcs/utils_string.c -o objs//utils_string.o -Iincludes/
+ar rcs libft.a  objs//ft_isalpha.o  objs//ft_isdigit.o  objs//ft_isalnum.o  objs//ft_isascii.o  objs//ft_isprint.o  objs//ft_strlen.o  objs//ft_memset.o  objs//ft_bzero.o  objs//ft_memcpy.o  objs//ft_memmove.o  objs//ft_strlcpy.o  objs//ft_strlcat.o  objs//ft_toupper.o  objs//ft_tolower.o  objs//ft_strchr.o  objs//ft_strrchr.o  objs//ft_strncmp.o  objs//ft_memchr.o  objs//ft_memcmp.o  objs//ft_substr.o  objs//ft_strjoin.o  objs//ft_strtrim.o  objs//ft_strnstr.o  objs//ft_split.o  objs//ft_itoa.o  objs//ft_strmapi.o  objs//ft_striteri.o  objs//ft_putchar_fd.o  objs//ft_putstr_fd.o  objs//ft_putendl_fd.o  objs//ft_putnbr_fd.o  objs//ft_strdup.o  objs//ft_atoi.o  objs//ft_calloc.o  objs//get_next_line.o  objs//get_next_line_utils.o  objs//add_to_file_string.o  objs//ft_printf.o  objs//ft_uitoa.o  objs//utils.o  objs//utils_buffer.o  objs//utils_num.o  objs//utils_pointeur.o  objs//utils_string.o
+make[1]: Leaving directory '/home/hchereau/Documents/fdf/libft'
+mkdir -p objs/
+clang -Werror -Wextra -Wall -c srcs/utils_matrice.c -o objs//utils_matrice.o -I includes/ -I minilibx-linux// -I libft//includes/ -O3
+mkdir -p objs/
+clang -Werror -Wextra -Wall -c srcs/ft_csplit.c -o objs//ft_csplit.o -I includes/ -I minilibx-linux// -I libft//includes/ -O3
+mkdir -p objs/
+clang -Werror -Wextra -Wall -c srcs/main.c -o objs//main.o -I includes/ -I minilibx-linux// -I libft//includes/ -O3
+clang -Werror -Wextra -Wall  objs//utils_matrice.o  objs//ft_csplit.o  objs//main.o -o fdf -I includes/ -I minilibx-linux// -I libft//includes/ -Lmlx-linux -L/usr/lib -lXext -lX11 -lm -lz -fPIE minilibx-linux//libmlx.a libft//libft.a
+make: Leaving directory '/home/hchereau/Documents/fdf'
+ 

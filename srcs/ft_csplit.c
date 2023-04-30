@@ -6,7 +6,7 @@
 /*   By: hchereau <hchereau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/23 16:36:45 by hchereau          #+#    #+#             */
-/*   Updated: 2023/04/24 21:05:03 by hchereau         ###   ########.fr       */
+/*   Updated: 2023/04/29 22:12:35 by hchereau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ static size_t	count_words(const char *s, char *charset)
 	return (size_split + (is_word == true));
 }
 
-static void	free_strs(char **strs)
+void	free_strs(char **strs)
 {
 	size_t	incre;
 

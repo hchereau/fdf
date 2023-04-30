@@ -6,7 +6,7 @@
 /*   By: hchereau <hchereau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/18 20:44:05 by hchereau          #+#    #+#             */
-/*   Updated: 2023/04/29 15:10:49 by hchereau         ###   ########.fr       */
+/*   Updated: 2023/04/29 22:16:29 by hchereau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,14 +41,15 @@ size_t   word_count(char *str)
 
 void    get_size_matrice(int fd, t_matrice *matrice)
 {
-    char    *gnl = NULL; 
-    
+    char	*gnl;
+    char	*gnl_tmp;
     gnl = get_next_line(fd);
     matrice->size_x = word_count(gnl);
     while (gnl != NULL)
     {
         ++matrice->size_y;
         gnl = get_next_line(fd);
+        
     }
 }
 

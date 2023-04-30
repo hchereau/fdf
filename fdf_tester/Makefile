@@ -50,6 +50,10 @@ CFLAGS += -Werror
 CFLAGS += -Wextra
 CFLAGS += -Wall
 
+ifeq ($(debug), true)
+	CFLAGS += -fsanitize=address,undefined -g3
+endif
+
 all: $(NAME)
 
 $(NAME): $(OBJS) 

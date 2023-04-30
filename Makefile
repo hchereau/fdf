@@ -84,12 +84,15 @@ test: $(NAME)
 		echo -n "\n<------TESTS------>\n\n"
 		./$(RUN_TESTS)
 clean:
-	$(RM) -R $(PATH_OBJS)
+	$(RM) -r $(PATH_OBJS)
 	$(MAKE) -C $(MLX_FOLDER) clean
 	$(MAKE) -C $(LIBFT_FOLDER) clean
+	$(MAKE) -C $(TEST_FOLDER) clean
 
 fclean: clean
 	$(RM) $(NAME)
+	$(MAKE) -C $(LIBFT_FOLDER) fclean
+	$(MAKE) -C $(TEST_FOLDER) fclean
 
 re: fclean
 	$(MAKE)
