@@ -34,7 +34,7 @@ INCLUDES_FDF = includes/
 INCLUDES_LIBFT += $(LIBFT_FOLDER)/includes/
 INCLUDES_MLX = $(MLX_FOLDER)/
 INCLUDES += -I $(INCLUDES_FDF)
-INCLUDES += -I $(INCLUDES_MLX)
+#INCLUDES += -I $(INCLUDES_MLX)
 INCLUDES += -I $(INCLUDES_LIBFT)
 
 HEADERS += $(INCLUDES_FDF)/fdf.h
@@ -67,7 +67,7 @@ RUN_TESTS = $(TEST_FOLDER)/run_test
 all: $(NAME)
 
 $(NAME): $(LIB_MLX) $(LIBFT) $(OBJS)
-	$(CC) $(CFLAGS) $(OBJS) -o $(NAME) $(INCLUDES) $(LINKS) $(LIB_MLX) $(LIBFT)
+	$(CC) $(CFLAGS) $(OBJS) -o $(NAME) $(INCLUDES) $(LINKS) $(LIBFT)
 
 $(OBJS): $(PATH_OBJS)/%.o: %.c $(HEADERS) $(MAKEFILE)
 	mkdir -p $(PATH_OBJS)
@@ -82,10 +82,10 @@ $(LIBFT):
 test: $(NAME)
 		$(MAKE) -sC $(TEST_FOLDER)
 		echo -n "\n<------TESTS------>\n\n"
-		./$(RUN_TESTS)
+		valgrind --leak-check=full --show-leak-kinds=all ./$(RUN_TESTS)
 clean:
 	$(RM) -r $(PATH_OBJS)
-	$(MAKE) -C $(MLX_FOLDER) clean
+#	$(MAKE) -C $(MLX_FOLDER) clean
 	$(MAKE) -C $(LIBFT_FOLDER) clean
 	$(MAKE) -C $(TEST_FOLDER) clean
 
