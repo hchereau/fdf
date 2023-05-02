@@ -1,19 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.test.c                                        :+:      :+:    :+:   */
+/*   create_matrice_char.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hchereau <hchereau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/21 19:42:46 by hchereau          #+#    #+#             */
-/*   Updated: 2023/05/02 18:58:12 by hchereau         ###   ########.fr       */
+/*   Created: 2023/05/02 18:02:43 by hchereau          #+#    #+#             */
+/*   Updated: 2023/05/02 18:52:18 by hchereau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fdf.test.h"
+#include "fdf.h"
 
-int main(void)
+void	create_matrix_char(t_matrice *matrice, int fd)
 {
-    ft_csplit_test();
-    ft_strlen_mat_test();
+	size_t	index_col;
+
+	index_col = 0;
+	while(index_col < matrice->y)
+	{
+
+		++index_col
+	}
+}
+
+-------------------
+
+char ***content;
+
+content = read_file(file_path);
+if (is_valid_map(content) == true)
+{
+	map = get_map(content);
+	print_map(map);
 }
