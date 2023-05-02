@@ -6,7 +6,7 @@
 /*   By: hchereau <hchereau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/21 19:29:58 by hchereau          #+#    #+#             */
-/*   Updated: 2023/04/24 17:00:38 by hchereau         ###   ########.fr       */
+/*   Updated: 2023/05/02 17:02:25 by hchereau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,6 @@ void    ft_csplit_test(void);
 void    check_matrix_eq(char **mata, char **matb, size_t size_y, size_t size_x, const size_t n);
 void    check_sizet_eq(const size_t a, const size_t b, const size_t n);
 void    check_chain_eq(const char *a, const char *b, const size_t n);
+void	ft_strlen_mat_test(void);
 
 #endif

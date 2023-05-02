@@ -6,7 +6,7 @@
 /*   By: hchereau <hchereau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/21 19:45:31 by hchereau          #+#    #+#             */
-/*   Updated: 2023/05/01 18:41:57 by hchereau         ###   ########.fr       */
+/*   Updated: 2023/05/02 17:12:39 by hchereau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void    count_word_test(void)
 
 void get_size_matrice_test(void)
 {
-    struct  s_matrice matrice;
+    struct  s_mat matrice;
     int     fd1;
 
     printf("\nGET_SIZE_MATRICE_TEST\n\n");
@@ -39,6 +39,12 @@ void get_size_matrice_test(void)
 
 }
 
+void	ft_strlen_mat_test(void)
+{
+	char	*tab[] = {"0", "0", "0", NULL};
+	printf("\nFT_STRLEN_MAT_TEST\n");
+	check_sizet_eq(ft_strlen_mat(tab), 3, 1);
+}
 // void create_char_matrice_test(void)
 // {
 //     struct s_matrice    matrice;
