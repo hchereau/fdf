@@ -6,7 +6,7 @@
 /*   By: hchereau <hchereau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/21 19:25:16 by hchereau          #+#    #+#             */
-/*   Updated: 2023/05/02 18:57:05 by hchereau         ###   ########.fr       */
+/*   Updated: 2023/05/03 17:01:00 by hchereau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,7 @@
 # include <stdbool.h>
 # include "libft.h"
 
-# define WHITESPACE " \t\b\n"
-
-typedef struct s_matrice{
-    size_t  size_y;
-    size_t  size_x;
-    char     ***matrice_char;
-}   t_matrice;
+# define WHITESPACE " \t\n"
 
 size_t	word_count(char *str);
 size_t    get_nb_line(int fd);

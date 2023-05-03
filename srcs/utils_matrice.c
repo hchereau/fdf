@@ -6,7 +6,7 @@
 /*   By: hchereau <hchereau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/18 20:44:05 by hchereau          #+#    #+#             */
-/*   Updated: 2023/05/02 18:56:42 by hchereau         ###   ########.fr       */
+/*   Updated: 2023/05/03 17:05:23 by hchereau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,10 +39,21 @@ size_t  ft_strlen_mat(char **matrice)
 	return (i);
 }
 
-//void    create_char_matrice(int fd, t_matrice *matrice)
-//{
+char	***create_char_matrix(int fd, size_t nb_line)
+{
+	size_t	index_line;
+	char	***matrix;
+	char	**tab_cont;
 
-//}
+	matrix = (char***)malloc(nb_line * sizeof(char **));
+	index_line = 0;
+	while(index_line < nb_line)
+	{
+		tab_cont = ft_csplit(get_next_line(fd), WHITESPACE);
+		matrix[nb_line] = tab_cont;
+		++nb_line;
+	}
+}
 
 // int main(void)
 // {
