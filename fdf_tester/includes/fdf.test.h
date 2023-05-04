@@ -6,7 +6,7 @@
 /*   By: hchereau <hchereau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/21 19:29:58 by hchereau          #+#    #+#             */
-/*   Updated: 2023/05/03 16:21:37 by hchereau         ###   ########.fr       */
+/*   Updated: 2023/05/04 15:03:45 by hchereau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 # define WHITE "\033[0m"
 
 void	get_nb_line_test(void);
-void    create_char_matrice_test(void);
+void	create_char_matrix_test(void);
 void    print_matrix(char **mat);
 void    ft_csplit_test(void);
 void    check_matrix_eq(char **mata, char **matb, size_t size_y, size_t size_x, const size_t n);

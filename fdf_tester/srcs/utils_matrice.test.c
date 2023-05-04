@@ -6,7 +6,7 @@
 /*   By: hchereau <hchereau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/21 19:45:31 by hchereau          #+#    #+#             */
-/*   Updated: 2023/05/03 16:24:26 by hchereau         ###   ########.fr       */
+/*   Updated: 2023/05/04 15:03:05 by hchereau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,14 +29,9 @@ void	ft_strlen_mat_test(void)
 	check_sizet_eq(ft_strlen_mat(tab), 3, 1);
 }
 
-//void create_char_matrice_test(void)
-//{
-//    struct s_matrice    matrice;
-//    char                *matrice_test1[] = {"0000", "0000"};
-//    int                 fd1;
-
-//    printf("\nCREATE_CHAT_MATRICE_TEST\n\n");
-//    fd1 = open("fdf_tester/maps/test.fdf", O_RDONLY);
-//    create_char_matrice(fd1, &matrice);
-//    check_matrix_eq(matrice.matrice_char, matrice_test1, matrice.size_y, matrice.size_x, 1);
-//}
+void	create_char_matrix_test(void)
+{
+	char	***matrix;
+	
+		
+}
