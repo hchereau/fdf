@@ -6,7 +6,7 @@
 /*   By: hchereau <hchereau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/21 19:42:46 by hchereau          #+#    #+#             */
-/*   Updated: 2023/05/06 18:03:43 by hchereau         ###   ########.fr       */
+/*   Updated: 2023/05/08 19:33:14 by hchereau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,4 +17,5 @@ int main(void)
 	get_nb_line_test();
     //ft_csplit_test();
     ft_strlen_mat_test();
+    create_char_matrix_test();
 }

@@ -6,7 +6,7 @@
 /*   By: hchereau <hchereau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/18 20:44:05 by hchereau          #+#    #+#             */
-/*   Updated: 2023/05/06 17:58:18 by hchereau         ###   ########.fr       */
+/*   Updated: 2023/05/08 21:34:45 by hchereau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,9 +50,11 @@ char	***create_char_matrix(int fd, size_t nb_line)
 	while(index_line < nb_line)
 	{
 		tab_cont = ft_csplit(get_next_line(fd), WHITESPACE);
-		matrix[nb_line] = tab_cont;
-		++nb_line;
+		matrix[index_line] = tab_cont;
+		++index_line;
+		free(tab_cont);
 	}
+	free(tab_cont);
 	return matrix;
 }
 

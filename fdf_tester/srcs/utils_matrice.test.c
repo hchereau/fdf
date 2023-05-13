@@ -6,7 +6,7 @@
 /*   By: hchereau <hchereau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/21 19:45:31 by hchereau          #+#    #+#             */
-/*   Updated: 2023/05/06 18:02:26 by hchereau         ###   ########.fr       */
+/*   Updated: 2023/05/08 19:56:56 by hchereau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ void	create_char_matrix_test(void)
     {{"0"}, {"0"}, {"0"}, {"0"}}
 	};
 
+	printf("\nCREATE_CHAR_MATRIX_TEST\n\n");
 	fd1 = open("fdf_tester/maps/test.fdf", O_RDONLY);
 	nb_line = get_nb_line(fd1);
 	check_matrix_eq(create_char_matrix(fd1, nb_line), (char ***)matrice, 1);

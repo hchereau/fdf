@@ -6,7 +6,7 @@
 /*   By: hchereau <hchereau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/21 19:50:51 by hchereau          #+#    #+#             */
-/*   Updated: 2023/05/06 17:19:22 by hchereau         ###   ########.fr       */
+/*   Updated: 2023/05/08 19:31:27 by hchereau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,19 +57,18 @@ void    check_matrix_eq(char ***mata, char ***matb, const size_t n)
     size_t	z;
 
     y = 0;
-	z = 0;
     while(mata[y] != NULL)
     {
 		x = 0;
         while(mata[y][x] != NULL)
         {
 			z = 0;
-			while(mata[y][x][z] != NULL)
+			while(mata[y][x][z] != '\0')
 			{
-            	if (ft_strcmp(mata[i][j][k], matb[i][j][k]) != 0)
+            	if (strncmp(&mata[y][x][z], &matb[y][x][z], 1) != 0)
             	{
                 	printf("%zu : %sKO%s\n", n, RED, WHITE);
-                	printf("cord (%zu, %zu) | mine [%c] : (expected) [%c] \n", y, x, mata[y][x], matb[y][x]);
+                	printf("cord (%zu, %zu) | mine [%s] : (expected) [%s] \n", y, x, mata[y][x], matb[y][x]);
                 	printf("(mine matrix) : \n");
                 	print_matrix(mata);
                 	printf("(expected matrix) : \n");
@@ -85,7 +84,7 @@ void    check_matrix_eq(char ***mata, char ***matb, const size_t n)
     printf("%zu : %sOK%s\n", n, GREEN, WHITE);
 }
 
-void    print_matrix(char **mat)
+void    print_matrix(char ***mat)
 {
     size_t	y;
 	size_t	x;

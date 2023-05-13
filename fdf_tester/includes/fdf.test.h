@@ -6,7 +6,7 @@
 /*   By: hchereau <hchereau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/21 19:29:58 by hchereau          #+#    #+#             */
-/*   Updated: 2023/05/06 18:00:23 by hchereau         ###   ########.fr       */
+/*   Updated: 2023/05/08 18:52:07 by hchereau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 
 void	get_nb_line_test(void);
 void	create_char_matrix_test(void);
-void    print_matrix(char **mat);
+void    print_matrix(char ***mat);
 void    ft_csplit_test(void);
 void    check_matrix_eq(char ***mata, char ***matb, const size_t n);
 void    check_sizet_eq(const size_t a, const size_t b, const size_t n);
