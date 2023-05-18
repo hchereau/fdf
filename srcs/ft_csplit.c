@@ -6,7 +6,7 @@
 /*   By: hchereau <hchereau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/23 16:36:45 by hchereau          #+#    #+#             */
-/*   Updated: 2023/04/29 22:12:35 by hchereau         ###   ########.fr       */
+/*   Updated: 2023/05/17 15:24:25 by hchereau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,9 +43,9 @@ static char	*get_next_words(const char **s, char *charset)
 
 static size_t	count_words(const char *s, char *charset)
 {
-    size_t  size_split;
-   	size_t  i;
-    bool    is_word;
+	size_t	size_split;
+	size_t	i;
+	bool	is_word;
 
 	i = 0;
 	size_split = 0;

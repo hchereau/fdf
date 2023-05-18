@@ -6,7 +6,7 @@
 /*   By: hchereau <hchereau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/18 20:44:05 by hchereau          #+#    #+#             */
-/*   Updated: 2023/05/16 21:19:58 by hchereau         ###   ########.fr       */
+/*   Updated: 2023/05/17 15:15:55 by hchereau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ char	***create_char_matrix(int fd, size_t nb_line)
 	char	***matrix;
 	char	**tab_cont;
 
-	matrix = (char***)malloc(nb_line * sizeof(char **));
+	matrix = (char ***)malloc(nb_line * sizeof(char **));
 	index_line = 0;
 	while (index_line < nb_line)
 	{
@@ -55,10 +55,10 @@ char	***create_char_matrix(int fd, size_t nb_line)
 		free(tab_cont);
 	}
 	free(tab_cont);
-	return matrix;
+	return (matrix);
 }
 
-bool	is_valid_matrice(char ***matrix, nb_line)
+bool	is_valid_matrice(char ***matrix, size_t nb_line)
 {
 	size_t	y;
 	size_t	x;
