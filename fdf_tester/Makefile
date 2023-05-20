@@ -13,7 +13,7 @@ SRCS += main.test.c
 SRCS += utils_matrice.test.c
 SRCS += ft_csplit.test.c
 SRCS += utils.test.c
-SRCS += utils_matrice_vertex.test.c
+#SRCS += utils_matrice_vertex.test.c
 
 
 vpath %.c $(PATH_SRCS)

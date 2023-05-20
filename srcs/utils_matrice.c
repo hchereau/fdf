@@ -6,7 +6,7 @@
 /*   By: hchereau <hchereau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/18 20:44:05 by hchereau          #+#    #+#             */
-/*   Updated: 2023/05/17 15:15:55 by hchereau         ###   ########.fr       */
+/*   Updated: 2023/05/20 23:51:30 by hchereau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,16 @@ char	***create_char_matrix(int fd, size_t nb_line)
 	return (matrix);
 }
 
+static size_t	first_column(char **line)
+{
+	size_t	nb_car;
+
+	nb_car = 0;
+	while (line[nb_car] != NULL)
+		++nb_car;
+	return (nb_car);
+}
+
 bool	is_valid_matrice(char ***matrix, size_t nb_line)
 {
 	size_t	y;
@@ -79,11 +89,3 @@ bool	is_valid_matrice(char ***matrix, size_t nb_line)
 	return (is_matrix);
 }
 
-size_t	first_column(char **line)
-{
-	size_t	nb_car;
-
-	while (line[nb_car] != NULL)
-		++nb_car;
-	return (nb_car);
-}

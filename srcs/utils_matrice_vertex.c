@@ -6,7 +6,7 @@
 /*   By: hchereau <hchereau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 18:02:43 by hchereau          #+#    #+#             */
-/*   Updated: 2023/05/20 21:14:06 by hchereau         ###   ########.fr       */
+/*   Updated: 2023/05/20 23:49:29 by hchereau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,17 @@ static void	add_vertex(size_t i, char **s, t_vertex ***matrix)
 	else
 		matrix[i]->color = 0xFFFFFFF;
 }
+
+size_t	count_point_on_line(char ***matrix)
+{
+	size_t	nb_cols;
+
+	nb_cols = 0;
+	while (matrix[0][nb_cols] != NULL)
+		++nb_cols;
+	return (nb_cols);
+}
+
 
 t_vertex	***create_vertex_matrix(int fd, size_t nb_line, char ***matrix)
 {
