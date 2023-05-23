@@ -6,7 +6,7 @@
 /*   By: hchereau <hchereau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 18:02:43 by hchereau          #+#    #+#             */
-/*   Updated: 2023/05/20 23:49:29 by hchereau         ###   ########.fr       */
+/*   Updated: 2023/05/23 14:39:59 by hchereau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,6 @@ size_t	count_point_on_line(char ***matrix)
 		++nb_cols;
 	return (nb_cols);
 }
-
 
 t_vertex	***create_vertex_matrix(int fd, size_t nb_line, char ***matrix)
 {
