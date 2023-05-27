@@ -6,13 +6,13 @@
 /*   By: hchereau <hchereau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 18:02:43 by hchereau          #+#    #+#             */
-/*   Updated: 2023/05/23 14:39:59 by hchereau         ###   ########.fr       */
+/*   Updated: 2023/05/27 17:40:32 by hchereau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
 
-static void	add_vertex(size_t i, char **s, t_vertex ***matrix)
+static void	add_vertex(size_t i, char **s, t_vertex **matrix)
 {
 	char	**vertex_point;
 
@@ -35,7 +35,7 @@ size_t	count_point_on_line(char ***matrix)
 	return (nb_cols);
 }
 
-t_vertex	***create_vertex_matrix(int fd, size_t nb_line, char ***matrix)
+t_vertex	**create_vertex_matrix(int fd, size_t nb_line, char **matrix)
 {
 	struct s_vertex	***matrix;
 	size_t			index_line;
@@ -45,10 +45,10 @@ t_vertex	***create_vertex_matrix(int fd, size_t nb_line, char ***matrix)
 
 	index_line = 0;
 	nb_cols = count_point_on_line(matrix);
-	matrix = (t_vertex ***)malloc(nb_line * sizeof(t_vertex **));
+	matrix = (t_vertex **)malloc(nb_line * sizeof(t_vertex *));
 	while ((index_line < nb_line) && matrix != NULL)
 	{
-		matrix[index_line] = (t_vertex **)malloc(nb_cols * sizeof(t_vertex *));
+		matrix[index_line] = (t_vertex *)malloc(nb_cols * sizeof(t_vertex));
 		split_point = csplit(get_nb_line(fd), WHITESPACE);
 		i = 0;
 		while (split_point[i] != NULL)
