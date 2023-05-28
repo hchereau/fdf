@@ -19,8 +19,8 @@ PATH_SRCS = srcs/
 
 SRCS += utils_matrice.c
 SRCS += ft_csplit.c
-SRCS += create_matrice_char.c
-SRCS += utils_matrice_vertex.c
+#SRCS += utils_matrice_vertex.c
+SRCS += base_convert.c
 SRCS += main.c
 
 vpath %.c $(PATH_SRCS)

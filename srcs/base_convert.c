@@ -1,24 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils_matrice_vertex.test.c                        :+:      :+:    :+:   */
+/*   base_convert.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hchereau <hchereau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/20 21:16:17 by hchereau          #+#    #+#             */
-/*   Updated: 2023/05/28 14:35:54 by hchereau         ###   ########.fr       */
+/*   Created: 2023/05/28 13:15:54 by hchereau          #+#    #+#             */
+/*   Updated: 2023/05/28 14:57:56 by hchereau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fdf.test.h"
+#include "fdf.h"
 
-// void	create_vertex_matrix_test(void)
-// {
-// 	int				fd1;
-// 	struct s_vertex	res;
+int	base_convert(char *convert, char *base)
+{
+	size_t			i;
+	const size_t	len_base = ft_strlen(base);
 
-// 	printf("\nCREATE_VERTEX_MATRIX_TEST\n\n");
-// 	fd1 = open("/fdf_tester/maps/test.fdf");
-// 	res =
-
-// }
+	i = 0;
+	while (convert[0] != base[i])
+		++i;
+	if (convert[0] == '\0')
+		return (0);
+	return (i * len_base + base_convert(convert + 1, base));
+}

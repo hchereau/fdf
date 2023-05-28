@@ -13,6 +13,7 @@ SRCS += main.test.c
 SRCS += utils_matrice.test.c
 SRCS += ft_csplit.test.c
 SRCS += utils.test.c
+SRCS += base_convert.test.c
 #SRCS += utils_matrice_vertex.test.c
 
 
@@ -58,7 +59,7 @@ endif
 
 all: $(NAME)
 
-$(NAME): $(OBJS) 
+$(NAME): $(OBJS)
 		$(CC) $(CFLAGS) $(OBJS) $(OBJS_TEST) -o $(NAME) $(LIBFT)
 
 $(OBJS): $(PATH_OBJS)/%.o: %.c $(HEADERS)

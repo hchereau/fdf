@@ -1,24 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils_matrice_vertex.test.c                        :+:      :+:    :+:   */
+/*   base_convert.test.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hchereau <hchereau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/20 21:16:17 by hchereau          #+#    #+#             */
-/*   Updated: 2023/05/28 14:35:54 by hchereau         ###   ########.fr       */
+/*   Created: 2023/05/28 14:30:10 by hchereau          #+#    #+#             */
+/*   Updated: 2023/05/28 14:58:44 by hchereau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.test.h"
 
-// void	create_vertex_matrix_test(void)
-// {
-// 	int				fd1;
-// 	struct s_vertex	res;
+void	create_vertex_matrix_test(void)
+{
+	char		*hexa = "8E";
+	const int		res = 142;
+	int				sortie;
 
-// 	printf("\nCREATE_VERTEX_MATRIX_TEST\n\n");
-// 	fd1 = open("/fdf_tester/maps/test.fdf");
-// 	res =
+	printf("\nCREATE_VERTEX_MATRIX_TEST\n\n");
+	sortie = base_convert(hexa, BASE_HEXA);
+	check_int_eq(sortie, res, 1);
 
-// }
+
+
+}
+

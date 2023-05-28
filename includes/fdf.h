@@ -6,7 +6,7 @@
 /*   By: hchereau <hchereau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/21 19:25:16 by hchereau          #+#    #+#             */
-/*   Updated: 2023/05/27 18:22:17 by hchereau         ###   ########.fr       */
+/*   Updated: 2023/05/28 14:48:08 by hchereau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,9 @@
 # include "libft.h"
 # include <math.h>
 
-# define WHITESPACE " \t\n"
+# define WHITESPACE	" \t\n"
+# define DISTANCE	10
+# define BASE_HEXA	"0123456789ABCDEF"
 
 typedef struct s_vertex {
 	size_t	y;
@@ -48,4 +50,5 @@ char		**ft_csplit(const char *s, char *charset);
 void		free_strs(char **strs);
 size_t		ft_strlen_mat(char **matrice);
 t_vertex	**create_vertex_matrix(int fd, size_t nb_line, char ***matrix);
+int			base_convert(char *convert, char *base);
 #endif

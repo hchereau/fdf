@@ -6,7 +6,7 @@
 /*   By: hchereau <hchereau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/21 19:50:51 by hchereau          #+#    #+#             */
-/*   Updated: 2023/05/08 19:31:27 by hchereau         ###   ########.fr       */
+/*   Updated: 2023/05/28 14:47:00 by hchereau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,17 @@ void    check_sizet_eq(const size_t a, const size_t b, const size_t n)
     {
         printf("%zu : %sKO%s\n", n, RED, WHITE);
         printf("(mine) [%zu] : (expected) [%zu] \n", a, b);
+    }
+}
+
+void    check_int_eq(const int a, const int b, const size_t n)
+{
+    if (a == b)
+        printf("%zu : %sOK%s\n", n, GREEN, WHITE);
+    else
+    {
+        printf("%zu : %sKO%s\n", n, RED, WHITE);
+        printf("(mine) [%d] : (expected) [%d] \n", a, b);
     }
 }
 
