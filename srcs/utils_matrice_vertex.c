@@ -6,7 +6,7 @@
 /*   By: hchereau <hchereau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 18:02:43 by hchereau          #+#    #+#             */
-/*   Updated: 2023/05/28 12:58:32 by hchereau         ###   ########.fr       */
+/*   Updated: 2023/05/28 15:53:14 by hchereau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ static void	add_vertex(size_t i, char **s, t_vertex ***matrix,
 	matrix[index_line][i]->y = DISTANCE * index_line;
 	matrix[index_line][i]->z = ft_atoi(vertex_point[0]);
 	if (vertex_point[1] != NULL)
-		matrix[index_line][i]->color = ft_atoi(vertex_point[1]);
+		matrix[index_line][i]->color = base_convert(vertex_point[1], BASE_HEXA);
 	else
 		matrix[index_line][i]->color = 0xFFFFFFF;
 }

@@ -6,7 +6,7 @@
 /*   By: hchereau <hchereau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/27 13:18:44 by hchereau          #+#    #+#             */
-/*   Updated: 2023/05/27 21:52:31 by hchereau         ###   ########.fr       */
+/*   Updated: 2023/05/28 17:28:44 by hchereau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,8 @@
 // 	}
 // }
 
-static void	print_mtvtx(t_vertex *mat, t_window wdw, size_t col/*, t_segment *sgt*/)
+static void	print_vertex_mtvtx(t_vertex *mat, t_window wdw, size_t col
+			/*, t_segment *sgt*/)
 {
 	size_t		x;
 	t_vertex	vertex;
@@ -69,7 +70,7 @@ static void	print_mtvtx(t_vertex *mat, t_window wdw, size_t col/*, t_segment *sg
 	}
 }
 
-void	print_matrix(t_vertex ***matrix, size_t nb_line, size_t nb_col)
+void	print_matrix(t_vertex **matrix, size_t nb_line, size_t nb_col)
 {
 	size_t				y;
 	size_t				x;
