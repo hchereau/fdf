@@ -6,7 +6,7 @@
 /*   By: hchereau <hchereau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/21 13:17:43 by hchereau          #+#    #+#             */
-/*   Updated: 2023/05/29 21:45:40 by hchereau         ###   ########.fr       */
+/*   Updated: 2023/05/29 22:41:32 by hchereau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ int	main(__attribute__((unused))int argc, char **argv)
 	nb_line = get_nb_line(fd);
 	matrix_char = create_char_matrix(fd, nb_line);
 	close(fd);
-	if (is_valid_matrix(matrix_char, nb_line))
+	if (matrix_char != NULL && is_valid_matrix(matrix_char, nb_line))
 	{
 		fd = open(argv[1], O_RDONLY);
 		matrix = create_vertex_matrix(fd, nb_line, matrix_char);

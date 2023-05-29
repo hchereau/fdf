@@ -6,7 +6,7 @@
 /*   By: hchereau <hchereau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/18 20:44:05 by hchereau          #+#    #+#             */
-/*   Updated: 2023/05/29 21:47:42 by hchereau         ###   ########.fr       */
+/*   Updated: 2023/05/29 22:34:19 by hchereau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,16 +76,20 @@ bool	is_valid_matrix(char ***matrix, size_t nb_line)
 	bool	is_matrix;
 
 	y = 1;
-	nb_col = first_column(matrix[y]);
+	nb_col = first_column(matrix[0]);
 	is_matrix = true;
 	while (y < nb_line)
 	{
 		x = 0;
-		while (matrix[y][x] != NULL && x < nb_col)
-		++x;
+		while (matrix[y][x] != NULL && x <= nb_col)
+			++x;
+		if (x != nb_col)
+		{
+			is_matrix = false;
+			break ;
+		}
+		++y;
 	}
-	if (x > nb_col)
-		is_matrix = false;
 	return (is_matrix);
 }
 
