@@ -6,25 +6,25 @@
 /*   By: hchereau <hchereau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 18:02:43 by hchereau          #+#    #+#             */
-/*   Updated: 2023/05/29 21:23:07 by hchereau         ###   ########.fr       */
+/*   Updated: 2023/05/30 01:38:46 by hchereau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
 
-static void	add_vertex(size_t i, char *s, t_vertex ***matrix,
+static void	add_vertex(size_t i, char *s, t_vertex **matrix,
 	size_t index_line)
 {
 	char	**vertex_point;
 
 	vertex_point = ft_split(s, ',');
-	matrix[index_line][i]->x = DISTANCE * i;
-	matrix[index_line][i]->y = DISTANCE * index_line;
-	matrix[index_line][i]->z = ft_atoi(vertex_point[0]);
+	matrix[index_line][i].x = DISTANCE * i;
+	matrix[index_line][i].y = DISTANCE * index_line;
+	matrix[index_line][i].z = ft_atoi(vertex_point[0]);
 	if (vertex_point[1] != NULL)
-		matrix[index_line][i]->color = base_convert(vertex_point[1], BASE_HEXA);
+		matrix[index_line][i].color = base_convert(vertex_point[1], BASE_HEXA);
 	else
-		matrix[index_line][i]->color = 0xFFFFFFF;
+		matrix[index_line][i].color = 0xFFFFFFF;
 }
 
 size_t	count_point_on_line(char ***matrix)
@@ -43,8 +43,9 @@ t_vertex	**create_vertex_matrix(int fd, size_t nb_line, char ***matrix_char)
 	size_t			index_line;
 	size_t			nb_cols;
 	size_t			i;
-	char			**split_point;
+	//char			**split_point;
 
+	(void)fd;
 	index_line = 0;
 	nb_cols = count_point_on_line(matrix_char);
 	matrix = (t_vertex **)malloc(nb_line * sizeof(t_vertex *));
@@ -53,11 +54,11 @@ t_vertex	**create_vertex_matrix(int fd, size_t nb_line, char ***matrix_char)
 		matrix[index_line] = (t_vertex *)malloc(nb_cols * sizeof(t_vertex));
 		if (matrix[index_line] == NULL)
 			break ;
-		split_point = ft_csplit(get_next_line(fd), WHITESPACE);
+		//split_point = ft_csplit(get_next_line(fd), WHITESPACE);
 		i = 0;
-		while (split_point[i] != NULL)
+		while (i < nb_cols)
 		{
-			add_vertex(index_line, split_point[i], &matrix, index_line);
+			add_vertex(i, matrix_char[index_line][i], matrix, index_line);
 			++i;
 		}
 		++index_line;

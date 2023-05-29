@@ -6,7 +6,7 @@
 /*   By: hchereau <hchereau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/27 13:18:44 by hchereau          #+#    #+#             */
-/*   Updated: 2023/05/29 21:43:47 by hchereau         ###   ########.fr       */
+/*   Updated: 2023/05/30 01:47:55 by hchereau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ void	print_matrix(t_vertex **matrix, size_t nb_line, size_t nb_col)
 
 	y = 0;
 	window.mlx_ptr = mlx_init();
-	mlx_new_window(window.mlx_ptr, 800, 800, "fdf");
+	window.win_ptr = mlx_new_window(window.mlx_ptr, 800, 800, "fdf");
 	while (y < nb_line)
 	{
 		print_vertex_mtvtx(matrix[y], window, nb_col);

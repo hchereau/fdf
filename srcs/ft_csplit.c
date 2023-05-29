@@ -6,7 +6,7 @@
 /*   By: hchereau <hchereau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/23 16:36:45 by hchereau          #+#    #+#             */
-/*   Updated: 2023/05/17 15:24:25 by hchereau         ###   ########.fr       */
+/*   Updated: 2023/05/30 01:27:40 by hchereau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,7 +91,7 @@ char	**ft_csplit(const char *s, char *charset)
 	size_split = count_words(s, charset);
 	split = (char **)malloc((size_split + 1) * sizeof(char *));
 	if (split != NULL)
-	{	
+	{
 		i = 0;
 		split[size_split] = NULL;
 		while (i < size_split)

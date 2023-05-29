@@ -6,7 +6,7 @@
 /*   By: hchereau <hchereau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/21 19:45:31 by hchereau          #+#    #+#             */
-/*   Updated: 2023/05/16 17:30:17 by hchereau         ###   ########.fr       */
+/*   Updated: 2023/05/30 01:07:28 by hchereau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,10 @@ void	create_char_matrix_test(void)
 	size_t	nb_line;
 	size_t	fd1;
 	char	***matrix;
-	char *matrice[2][4][1] = {
-    {{"0"}, {"0"}, {"0"}, {"0"}},
-    {{"0"}, {"0"}, {"0"}, {"0"}}
+	char ***matrice = {
+    {{"0"}, {"0"}, {"0"}, {"0"}, NULL},
+    {{"0"}, {"0"}, {"0"}, {"0"}, NULL}
+	NULL
 	};
 
 	printf("\nCREATE_CHAR_MATRIX_TEST\n\n");
