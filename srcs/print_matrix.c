@@ -6,7 +6,7 @@
 /*   By: hchereau <hchereau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/27 13:18:44 by hchereau          #+#    #+#             */
-/*   Updated: 2023/05/28 17:28:44 by hchereau         ###   ########.fr       */
+/*   Updated: 2023/05/29 21:43:47 by hchereau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,8 +46,7 @@
 // 	}
 // }
 
-static void	print_vertex_mtvtx(t_vertex *mat, t_window wdw, size_t col
-			/*, t_segment *sgt*/)
+static void	print_vertex_mtvtx(t_vertex *mat, t_window wdw, size_t col)
 {
 	size_t		x;
 	t_vertex	vertex;
@@ -55,17 +54,9 @@ static void	print_vertex_mtvtx(t_vertex *mat, t_window wdw, size_t col
 	x = 0;
 	while (x < col)
 	{
-		sgt->col = x;
-		vertex = mat[x][z];
-		while (vertex != NULL)
-		{
-			// sgt->xa = vertex.x;
-			// sgt->ya = vertex.y;
-			// find_pb(mat, sgt);
-			mlx_pixel_put(wdw.mlx_ptr, wdw.win_ptr,
-				vertex.x, vertex.y, vertex.color);
-			// print_segment(&sgt, wdw);
-		}
+		vertex = mat[x];
+		mlx_pixel_put(wdw.mlx_ptr, wdw.win_ptr,
+			vertex.x, vertex.y, vertex.color);
 		++x;
 	}
 }
@@ -73,20 +64,14 @@ static void	print_vertex_mtvtx(t_vertex *mat, t_window wdw, size_t col
 void	print_matrix(t_vertex **matrix, size_t nb_line, size_t nb_col)
 {
 	size_t				y;
-	size_t				x;
 	struct s_window		window;
-	// struct s_segment	segment;
 
 	y = 0;
-	// segment.xa = 0;
-	// segment.ya = 0;
-	// segment.za = 0;
 	window.mlx_ptr = mlx_init();
-	window.mlx_new_window(window.mlx_ptr, 800, 800, "fdf");
+	mlx_new_window(window.mlx_ptr, 800, 800, "fdf");
 	while (y < nb_line)
 	{
-		segment.line = y;
-		print_vertex_mtvtx(matrix[y], window, nb_col, &segment);
+		print_vertex_mtvtx(matrix[y], window, nb_col);
 		++y;
 	}
 	mlx_loop(window.mlx_ptr);

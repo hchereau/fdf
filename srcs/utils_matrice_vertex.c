@@ -6,13 +6,13 @@
 /*   By: hchereau <hchereau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 18:02:43 by hchereau          #+#    #+#             */
-/*   Updated: 2023/05/28 15:53:14 by hchereau         ###   ########.fr       */
+/*   Updated: 2023/05/29 21:23:07 by hchereau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
 
-static void	add_vertex(size_t i, char **s, t_vertex ***matrix,
+static void	add_vertex(size_t i, char *s, t_vertex ***matrix,
 	size_t index_line)
 {
 	char	**vertex_point;
@@ -53,13 +53,14 @@ t_vertex	**create_vertex_matrix(int fd, size_t nb_line, char ***matrix_char)
 		matrix[index_line] = (t_vertex *)malloc(nb_cols * sizeof(t_vertex));
 		if (matrix[index_line] == NULL)
 			break ;
-		split_point = csplit(get_nb_line(fd), WHITESPACE);
+		split_point = ft_csplit(get_next_line(fd), WHITESPACE);
 		i = 0;
 		while (split_point[i] != NULL)
 		{
-			add_vertex(index_line, split_point, &matrix, index_line);
+			add_vertex(index_line, split_point[i], &matrix, index_line);
 			++i;
 		}
 		++index_line;
 	}
+	return (matrix);
 }

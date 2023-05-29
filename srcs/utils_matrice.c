@@ -6,7 +6,7 @@
 /*   By: hchereau <hchereau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/18 20:44:05 by hchereau          #+#    #+#             */
-/*   Updated: 2023/05/27 12:52:57 by hchereau         ###   ########.fr       */
+/*   Updated: 2023/05/29 21:47:42 by hchereau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ static size_t	first_column(char **line)
 	return (nb_car);
 }
 
-bool	is_valid_matrice(char ***matrix, size_t nb_line)
+bool	is_valid_matrix(char ***matrix, size_t nb_line)
 {
 	size_t	y;
 	size_t	x;
