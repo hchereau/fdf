@@ -6,7 +6,7 @@
 /*   By: hchereau <hchereau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/21 19:25:16 by hchereau          #+#    #+#             */
-/*   Updated: 2023/05/29 21:59:17 by hchereau         ###   ########.fr       */
+/*   Updated: 2023/05/30 13:25:00 by hchereau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ char		***create_char_matrix(int fd, size_t nb_line);
 char		**ft_csplit(const char *s, char *charset);
 void		free_strs(char **strs);
 size_t		ft_strlen_mat(char **matrice);
-t_vertex	**create_vertex_matrix(int fd, size_t nb_line, char ***matrix_char);
+t_vertex	**create_vertex_matrix(size_t nb_line, char ***matrix_char);
 int			base_convert(char *convert, char *base);
 void		print_matrix(t_vertex **matrix, size_t nb_line, size_t nb_col);
 bool		is_valid_matrix(char ***matrix, size_t nb_line);

@@ -6,7 +6,7 @@
 /*   By: hchereau <hchereau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/21 13:17:43 by hchereau          #+#    #+#             */
-/*   Updated: 2023/05/30 01:28:51 by hchereau         ###   ########.fr       */
+/*   Updated: 2023/05/30 13:41:40 by hchereau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,24 +45,35 @@ void	free_matrice_char(char ***matrix_char)
 	free(matrix_char);
 }
 
+static	char	***char_matrix(char	*path, size_t *nb_line)
+{
+	int		fd;
+	char	***matrix;
+
+	fd = open(path, O_RDONLY);
+	*nb_line = get_nb_line(fd);
+	close(fd);
+	fd = open(path, O_RDONLY);
+	matrix = create_char_matrix(fd, *nb_line);
+	close(fd);
+	return (matrix);
+}
+
+static	void	vertex_matrix(size_t nb_line, char ***matrix_char)
+{
+	t_vertex	**matrix;
+
+	matrix = create_vertex_matrix(nb_line, matrix_char);
+	print_matrix(matrix, nb_line, count_point_on_line(matrix_char));
+}
+
 int	main(__attribute__((unused))int argc, char **argv)
 {
-	int			fd;
 	size_t		nb_line;
-	t_vertex	**matrix;
 	char		***matrix_char;
 
-	fd = open(argv[1], O_RDONLY);
-	nb_line = get_nb_line(fd);
-	close(fd);
-	fd = open(argv[1], O_RDONLY);
-	matrix_char = create_char_matrix(fd, nb_line);
-	close(fd);
+	matrix_char = char_matrix(argv[1], &nb_line);
 	if (matrix_char != NULL && is_valid_matrix(matrix_char, nb_line))
-	{
-		//fd = open(argv[1], O_RDONLY);
-		matrix = create_vertex_matrix(fd, nb_line, matrix_char);
-		print_matrix(matrix, nb_line, count_point_on_line(matrix_char));
-	}
+		vertex_matrix(nb_line, matrix_char);
 	free_matrice_char(matrix_char);
 }
