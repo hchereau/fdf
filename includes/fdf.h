@@ -6,7 +6,7 @@
 /*   By: hchereau <hchereau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/21 19:25:16 by hchereau          #+#    #+#             */
-/*   Updated: 2023/05/30 13:25:00 by hchereau         ###   ########.fr       */
+/*   Updated: 2023/05/30 18:01:30 by hchereau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@
 # define WHITESPACE	" \t\n"
 # define DISTANCE	10
 # define BASE_HEXA	"0123456789ABCDEF"
+# define CROSS		17
+# define ECHAP		53
 
 typedef struct s_vertex {
 	size_t	y;
@@ -55,4 +57,5 @@ int			base_convert(char *convert, char *base);
 void		print_matrix(t_vertex **matrix, size_t nb_line, size_t nb_col);
 bool		is_valid_matrix(char ***matrix, size_t nb_line);
 size_t		count_point_on_line(char ***matrix);
+void		free_matrice_char(char ***matrix_char);
 #endif

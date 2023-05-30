@@ -22,6 +22,7 @@ SRCS += ft_csplit.c
 SRCS += utils_matrice_vertex.c
 SRCS += base_convert.c
 SRCS += print_matrix.c
+SRCS += free_matrice.c
 SRCS += main.c
 
 vpath %.c $(PATH_SRCS)
