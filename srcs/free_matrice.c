@@ -6,7 +6,7 @@
 /*   By: hchereau <hchereau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/30 17:56:48 by hchereau          #+#    #+#             */
-/*   Updated: 2023/05/30 18:23:36 by hchereau         ###   ########.fr       */
+/*   Updated: 2023/05/30 19:37:12 by hchereau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,11 +32,22 @@ void	free_matrice_char(char ***matrix_char)
 	free(matrix_char);
 }
 
-// void	free_matrice_vertex(t_vertex **matrix_vertex)
-// {
-// 	int	x;
-// 	int	y;
+void	free_matrice_vertex(t_vertex **matrix_vertex)
+{
+	int	x;
+	int	y;
 
-// 	y = 0;
-// 	while (matrix_vertex)
-// }
+	y = 0;
+	while (matrix_vertex[y] != NULL)
+	{
+		x = 0;
+		while (matrix_vertex[y][x] != NULL)
+		{
+			free(matrix_vertex[y][x]);
+			++x;
+		}
+		free(matrix_vertex[y]);
+		++y;
+	}
+	free(matrix_vertex);
+}

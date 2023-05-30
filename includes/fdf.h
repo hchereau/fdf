@@ -6,7 +6,7 @@
 /*   By: hchereau <hchereau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/21 19:25:16 by hchereau          #+#    #+#             */
-/*   Updated: 2023/05/30 18:01:30 by hchereau         ###   ########.fr       */
+/*   Updated: 2023/05/30 19:39:16 by hchereau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,4 +58,5 @@ void		print_matrix(t_vertex **matrix, size_t nb_line, size_t nb_col);
 bool		is_valid_matrix(char ***matrix, size_t nb_line);
 size_t		count_point_on_line(char ***matrix);
 void		free_matrice_char(char ***matrix_char);
+void		free_matrice_vertex(t_vertex **matrix_vertex);
 #endif
