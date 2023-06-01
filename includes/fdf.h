@@ -6,7 +6,7 @@
 /*   By: hchereau <hchereau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/21 19:25:16 by hchereau          #+#    #+#             */
-/*   Updated: 2023/05/30 19:39:16 by hchereau         ###   ########.fr       */
+/*   Updated: 2023/06/01 16:34:27 by hchereau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@
 # define BASE_HEXA	"0123456789ABCDEF"
 # define CROSS		17
 # define ECHAP		53
+# define ZOOM		0.1
 
 typedef struct s_vertex {
 	size_t	y;
@@ -42,9 +43,17 @@ typedef struct s_segment {
 	size_t	col;
 }	t_segment;
 
+typedef struct s_map{
+	t_vertex	**matrix;
+	size_t		nb_line;
+	size_t		nb_cols;
+	size_t		zoom;
+}	t_map;
+
 typedef struct s_window {
 	void	*mlx_ptr;
 	void	*win_ptr;
+	t_map	map;
 }	t_window;
 
 size_t		get_nb_line(int fd);
@@ -57,6 +66,8 @@ int			base_convert(char *convert, char *base);
 void		print_matrix(t_vertex **matrix, size_t nb_line, size_t nb_col);
 bool		is_valid_matrix(char ***matrix, size_t nb_line);
 size_t		count_point_on_line(char ***matrix);
+void		zoom(int keycode, t_window *window);
 void		free_matrice_char(char ***matrix_char);
-void		free_matrice_vertex(t_vertex **matrix_vertex);
+void		free_matrice_vertex(t_window *window);
+void		free_split(char **split);
 #endif

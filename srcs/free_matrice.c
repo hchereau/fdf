@@ -6,7 +6,7 @@
 /*   By: hchereau <hchereau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/30 17:56:48 by hchereau          #+#    #+#             */
-/*   Updated: 2023/05/30 19:37:12 by hchereau         ###   ########.fr       */
+/*   Updated: 2023/06/01 14:43:11 by hchereau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,22 +32,28 @@ void	free_matrice_char(char ***matrix_char)
 	free(matrix_char);
 }
 
-void	free_matrice_vertex(t_vertex **matrix_vertex)
+void	free_matrice_vertex(t_window *window)
 {
-	int	x;
-	int	y;
+	size_t			y;
 
 	y = 0;
-	while (matrix_vertex[y] != NULL)
+	while (y < window->map.nb_line)
 	{
-		x = 0;
-		while (matrix_vertex[y][x] != NULL)
-		{
-			free(matrix_vertex[y][x]);
-			++x;
-		}
-		free(matrix_vertex[y]);
+		free(window->map.matrix[y]);
 		++y;
 	}
-	free(matrix_vertex);
+	free(window->map.matrix);
+}
+
+void	free_split(char **split)
+{
+	int	i;
+
+	i = 0;
+	while (split[i] != NULL)
+	{
+		free(split[i]);
+		++i;
+	}
+	free(split);
 }

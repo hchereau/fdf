@@ -6,7 +6,7 @@
 /*   By: hchereau <hchereau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/27 13:18:44 by hchereau          #+#    #+#             */
-/*   Updated: 2023/05/30 18:33:36 by hchereau         ###   ########.fr       */
+/*   Updated: 2023/06/01 16:28:20 by hchereau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,7 @@ static int	shut_window(t_window *window)
 	mlx_destroy_window(window->mlx_ptr, window->win_ptr);
 	mlx_destroy_display(window->mlx_ptr);
 	free(window->mlx_ptr);
+	free_matrice_vertex(window);
 	exit(0);
 }
 
@@ -74,8 +75,23 @@ static int	key_events(int keycode, t_window *window)
 	printf("%d\n", keycode);
 	if (keycode == 65307)
 		shut_window(window);
+	zoom(keycode, window);
 	return (1);
 }
+
+static void	fill_map(t_vertex **matrix, size_t nb_line, size_t nb_col,
+				t_window *window)
+{
+	window->map.matrix = matrix;
+	window->map.nb_cols = nb_col;
+	window->map.nb_line = nb_line;
+}
+
+// void	test_hook_key(t_window	*window)
+// {
+// 	mlx_key_hook(window->win_ptr, key_events, window);
+// 	mlx_hook(window->win_ptr, 17, 0L, shut_window, window);
+// }
 
 void	print_matrix(t_vertex **matrix, size_t nb_line, size_t nb_col)
 {
@@ -85,6 +101,7 @@ void	print_matrix(t_vertex **matrix, size_t nb_line, size_t nb_col)
 	y = 0;
 	window.mlx_ptr = mlx_init();
 	window.win_ptr = mlx_new_window(window.mlx_ptr, 800, 800, "fdf");
+	fill_map(matrix, nb_line, nb_col, &window);
 	while (y < nb_line)
 	{
 		print_vertex_mtvtx(matrix[y], window, nb_col);
@@ -92,5 +109,6 @@ void	print_matrix(t_vertex **matrix, size_t nb_line, size_t nb_col)
 	}
 	mlx_key_hook(window.win_ptr, key_events, &window);
 	mlx_hook(window.win_ptr, 17, 0L, shut_window, &window);
+	test_hook_key(&window);
 	mlx_loop(window.mlx_ptr);
 }

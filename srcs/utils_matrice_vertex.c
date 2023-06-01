@@ -6,7 +6,7 @@
 /*   By: hchereau <hchereau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 18:02:43 by hchereau          #+#    #+#             */
-/*   Updated: 2023/05/30 15:12:33 by hchereau         ###   ########.fr       */
+/*   Updated: 2023/06/01 18:09:20 by hchereau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ static void	add_vertex(size_t i, char *s, t_vertex **matrix,
 	vertex_point = ft_split(s, ',');
 	fill_coord_vertex(&matrix[index_line][i], i, index_line, vertex_point);
 	fill_color_vertex(&matrix[index_line][i], vertex_point);
+	free_split(vertex_point);
 }
 
 size_t	count_point_on_line(char ***matrix)
@@ -62,7 +63,9 @@ t_vertex	**create_vertex_matrix(size_t nb_line, char ***matrix_char)
 	{
 		matrix[index_line] = (t_vertex *)malloc(nb_cols * sizeof(t_vertex));
 		if (matrix[index_line] == NULL)
+		{
 			break ;
+		}
 		i = 0;
 		while (i < nb_cols)
 		{
