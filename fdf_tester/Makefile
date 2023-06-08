@@ -10,11 +10,11 @@ LIBFT += $(LIBFT_FOLDER)/libft.a
 PATH_SRCS = srcs/
 
 SRCS += main.test.c
-SRCS += utils_matrice.test.c
+SRCS += utils_matrix.test.c
 SRCS += ft_csplit.test.c
 SRCS += utils.test.c
 SRCS += base_convert.test.c
-#SRCS += utils_matrice_vertex.test.c
+#SRCS += utils_matrix_vertex.test.c
 
 
 vpath %.c $(PATH_SRCS)

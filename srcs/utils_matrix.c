@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils_matrice.c                                    :+:      :+:    :+:   */
+/*   utils_matrix.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hchereau <hchereau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -29,12 +29,12 @@ size_t	get_nb_line(int fd)
 	return (nb_line);
 }
 
-size_t	ft_strlen_mat(char **matrice)
+size_t	ft_strlen_mat(char **matrix)
 {
 	size_t	i;
 
 	i = 0;
-	while (matrice[i]!= NULL)
+	while (matrix[i]!= NULL)
 		++i;
 	return (i);
 }

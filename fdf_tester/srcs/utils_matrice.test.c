@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils_matrice.test.c                               :+:      :+:    :+:   */
+/*   utils_matrix.test.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hchereau <hchereau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -34,7 +34,7 @@ void	create_char_matrix_test(void)
 	size_t	nb_line;
 	size_t	fd1;
 	char	***matrix;
-	char ***matrice = {
+	char ***matrix = {
     {{"0"}, {"0"}, {"0"}, {"0"}, NULL},
     {{"0"}, {"0"}, {"0"}, {"0"}, NULL}
 	NULL
@@ -44,7 +44,7 @@ void	create_char_matrix_test(void)
 	fd1 = open("fdf_tester/maps/test.fdf", O_RDONLY);
 	nb_line = get_nb_line(fd1);
 	matrix = create_char_matrix(fd1, nb_line);
-	check_matrix_eq(matrix, (char ***)matrice, 1);
+	check_matrix_eq(matrix, (char ***)matrix, 1);
 	close(fd1);
 	free(matrix);
 }

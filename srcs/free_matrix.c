@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   free_matrice.c                                     :+:      :+:    :+:   */
+/*   free_matrix.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hchereau <hchereau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,7 +12,7 @@
 
 #include "fdf.h"
 
-void	free_matrice_char(char ***matrix_char)
+void	free_matrix_char(char ***matrix_char)
 {
 	int	i;
 	int	y;
@@ -32,7 +32,7 @@ void	free_matrice_char(char ***matrix_char)
 	free(matrix_char);
 }
 
-void	free_matrice_vertex(t_window *window)
+void	free_matrix_vertex(t_window *window)
 {
 	size_t			y;
 

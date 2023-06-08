@@ -6,7 +6,7 @@
 /*   By: hchereau <hchereau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/27 13:18:44 by hchereau          #+#    #+#             */
-/*   Updated: 2023/06/01 16:28:20 by hchereau         ###   ########.fr       */
+/*   Updated: 2023/06/08 15:25:11 by hchereau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ static int	shut_window(t_window *window)
 	mlx_destroy_window(window->mlx_ptr, window->win_ptr);
 	mlx_destroy_display(window->mlx_ptr);
 	free(window->mlx_ptr);
-	free_matrice_vertex(window);
+	free_matrix_vertex(window);
 	exit(0);
 }
 
@@ -87,11 +87,11 @@ static void	fill_map(t_vertex **matrix, size_t nb_line, size_t nb_col,
 	window->map.nb_line = nb_line;
 }
 
-// void	test_hook_key(t_window	*window)
-// {
-// 	mlx_key_hook(window->win_ptr, key_events, window);
-// 	mlx_hook(window->win_ptr, 17, 0L, shut_window, window);
-// }
+ void	test_hook_key(t_window	*window)
+ {
+ 	mlx_key_hook(window->win_ptr, key_events, window);
+ 	mlx_hook(window->win_ptr, 17, 0L, shut_window, window);
+ }
 
 void	print_matrix(t_vertex **matrix, size_t nb_line, size_t nb_col)
 {

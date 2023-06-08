@@ -17,12 +17,13 @@ LIB_MLX = $(MLX_FOLDER)/libmlx.a
 
 PATH_SRCS = srcs/
 
-SRCS += utils_matrice.c
 SRCS += ft_csplit.c
-SRCS += utils_matrice_vertex.c
+SRCS += utils_matrix.c
+SRCS += utils_matrix_vertex.c
 SRCS += base_convert.c
 SRCS += print_matrix.c
-SRCS += free_matrice.c
+SRCS += free_matrix.c
+SRCS += utils_vertex.c
 SRCS += zoom.c
 SRCS += main.c
 
@@ -61,7 +62,7 @@ LINKS += -lXext
 LINKS += -lX11
 LINKS += -lm
 LINKS += -lz
-# LINKS += -fPIE
+LINKS += -fPIE
 
 ### TEST
 

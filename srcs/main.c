@@ -6,7 +6,7 @@
 /*   By: hchereau <hchereau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/21 13:17:43 by hchereau          #+#    #+#             */
-/*   Updated: 2023/05/30 18:34:39 by hchereau         ###   ########.fr       */
+/*   Updated: 2023/06/08 15:25:11 by hchereau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ static	void	vertex_matrix(size_t nb_line, char ***matrix_char)
 
 	count_p = count_point_on_line(matrix_char);
 	matrix = create_vertex_matrix(nb_line, matrix_char);
-	free_matrice_char(matrix_char);
+	free_matrix_char(matrix_char);
 	print_matrix(matrix, nb_line, count_p);
 }
 
@@ -69,7 +69,7 @@ int	main(int argc, char **argv)
 		}
 		else
 			ft_printf("error: invalid map\n");
-		free_matrice_char(matrix_char);
+		free_matrix_char(matrix_char);
 	}
 	else
 		printf("error: invalid file\n");

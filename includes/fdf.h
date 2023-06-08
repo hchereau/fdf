@@ -6,7 +6,7 @@
 /*   By: hchereau <hchereau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/21 19:25:16 by hchereau          #+#    #+#             */
-/*   Updated: 2023/06/01 16:34:27 by hchereau         ###   ########.fr       */
+/*   Updated: 2023/06/08 15:25:11 by hchereau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,14 +60,15 @@ size_t		get_nb_line(int fd);
 char		***create_char_matrix(int fd, size_t nb_line);
 char		**ft_csplit(const char *s, char *charset);
 void		free_strs(char **strs);
-size_t		ft_strlen_mat(char **matrice);
+size_t		ft_strlen_mat(char **matrix);
 t_vertex	**create_vertex_matrix(size_t nb_line, char ***matrix_char);
 int			base_convert(char *convert, char *base);
 void		print_matrix(t_vertex **matrix, size_t nb_line, size_t nb_col);
 bool		is_valid_matrix(char ***matrix, size_t nb_line);
 size_t		count_point_on_line(char ***matrix);
 void		zoom(int keycode, t_window *window);
-void		free_matrice_char(char ***matrix_char);
-void		free_matrice_vertex(t_window *window);
+void		fill_matrix_line(t_vertex **matrix, char ***matrix_char, size_t index_line, size_t nb_cols);
+void		free_matrix_char(char ***matrix_char);
+void		free_matrix_vertex(t_window *window);
 void		free_split(char **split);
 #endif
