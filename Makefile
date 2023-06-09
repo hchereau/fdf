@@ -15,7 +15,11 @@ LIB_MLX = $(MLX_FOLDER)/libmlx.a
 
 ### SRCS
 
-PATH_SRCS = srcs/
+PATH_SRCS += srcs/
+PATH_SRCS += srcs/matrix_char/
+PATH_SRCS += srcs/matrix_vertex/
+PATH_SRCS += srcs/utils/
+PATH_SRCS += srcs/matrix_vertex/copy_matrix_vertex/
 
 SRCS += ft_csplit.c
 SRCS += utils_matrix.c
@@ -25,6 +29,7 @@ SRCS += print_matrix.c
 SRCS += free_matrix.c
 SRCS += utils_vertex.c
 SRCS += zoom.c
+SRCS += copy_matrix_vertex.c
 SRCS += main.c
 
 vpath %.c $(PATH_SRCS)
