@@ -19,7 +19,7 @@ PATH_SRCS += srcs/
 PATH_SRCS += srcs/matrix_char/
 PATH_SRCS += srcs/matrix_vertex/
 PATH_SRCS += srcs/utils/
-PATH_SRCS += srcs/matrix_vertex/copy_matrix_vertex/
+PATH_SRCS += srcs/matrix_vertex/cp_vertex_matrix/
 
 SRCS += ft_csplit.c
 SRCS += utils_matrix.c
