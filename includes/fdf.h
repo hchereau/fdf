@@ -6,7 +6,7 @@
 /*   By: hchereau <hchereau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/21 19:25:16 by hchereau          #+#    #+#             */
-/*   Updated: 2023/06/09 15:54:41 by hchereau         ###   ########.fr       */
+/*   Updated: 2023/06/14 11:37:29 by hchereau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ size_t		count_point_on_line(char ***matrix);
 void		zoom(int keycode, t_window *window);
 void		fill_matrix_line(t_vertex **matrix, char ***matrix_char, size_t index_line, size_t nb_cols);
 t_vertex	**cp_matrix_vertex(t_vertex **matrix, size_t nb_line, size_t nb_cols);
-void 		malloc_matrix(size_t nb_line, size_t nb_cols, t_vertex **matrix);
+void 		malloc_matrix(size_t nb_line, size_t nb_cols, t_vertex ***matrix);
 void		free_matrix_char(char ***matrix_char);
 void		free_matrix_vertex(t_window *window);
 void		free_split(char **split);
