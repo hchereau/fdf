@@ -6,7 +6,7 @@
 /*   By: hchereau <hchereau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/27 13:18:44 by hchereau          #+#    #+#             */
-/*   Updated: 2023/06/08 15:25:11 by hchereau         ###   ########.fr       */
+/*   Updated: 2023/06/16 19:11:11 by hchereau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,24 +61,6 @@ static void	print_vertex_mtvtx(t_vertex *mat, t_window wdw, size_t col)
 	}
 }
 
-static int	shut_window(t_window *window)
-{
-	mlx_destroy_window(window->mlx_ptr, window->win_ptr);
-	mlx_destroy_display(window->mlx_ptr);
-	free(window->mlx_ptr);
-	free_matrix_vertex(window);
-	exit(0);
-}
-
-static int	key_events(int keycode, t_window *window)
-{
-	printf("%d\n", keycode);
-	if (keycode == 65307)
-		shut_window(window);
-	zoom(keycode, window);
-	return (1);
-}
-
 static void	fill_map(t_vertex **matrix, size_t nb_line, size_t nb_col,
 				t_window *window)
 {
@@ -86,12 +68,6 @@ static void	fill_map(t_vertex **matrix, size_t nb_line, size_t nb_col,
 	window->map.nb_cols = nb_col;
 	window->map.nb_line = nb_line;
 }
-
- void	test_hook_key(t_window	*window)
- {
- 	mlx_key_hook(window->win_ptr, key_events, window);
- 	mlx_hook(window->win_ptr, 17, 0L, shut_window, window);
- }
 
 void	print_matrix(t_vertex **matrix, size_t nb_line, size_t nb_col)
 {
@@ -101,14 +77,13 @@ void	print_matrix(t_vertex **matrix, size_t nb_line, size_t nb_col)
 	y = 0;
 	window.mlx_ptr = mlx_init();
 	window.win_ptr = mlx_new_window(window.mlx_ptr, 800, 800, "fdf");
+	window.map.zoom = 0;
 	fill_map(matrix, nb_line, nb_col, &window);
 	while (y < nb_line)
 	{
 		print_vertex_mtvtx(matrix[y], window, nb_col);
 		++y;
 	}
-	mlx_key_hook(window.win_ptr, key_events, &window);
-	mlx_hook(window.win_ptr, 17, 0L, shut_window, &window);
 	test_hook_key(&window);
 	mlx_loop(window.mlx_ptr);
 }

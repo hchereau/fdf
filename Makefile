@@ -20,6 +20,7 @@ PATH_SRCS += srcs/matrix_char/
 PATH_SRCS += srcs/matrix_vertex/
 PATH_SRCS += srcs/utils/
 PATH_SRCS += srcs/matrix_vertex/cp_vertex_matrix/
+PATH_SRCS += srcs/window/
 
 SRCS += ft_csplit.c
 SRCS += utils_matrix.c
@@ -30,6 +31,7 @@ SRCS += free_matrix.c
 SRCS += utils_vertex.c
 SRCS += zoom.c
 SRCS += copy_matrix_vertex.c
+SRCS += hook_key.c
 SRCS += main.c
 
 vpath %.c $(PATH_SRCS)

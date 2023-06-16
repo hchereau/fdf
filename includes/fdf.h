@@ -6,7 +6,7 @@
 /*   By: hchereau <hchereau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/21 19:25:16 by hchereau          #+#    #+#             */
-/*   Updated: 2023/06/14 11:37:29 by hchereau         ###   ########.fr       */
+/*   Updated: 2023/06/16 19:11:29 by hchereau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@
 # define BASE_HEXA	"0123456789ABCDEF"
 # define CROSS		17
 # define ECHAP		53
-# define ZOOM		0.1
+# define ZOOM		1
 
 typedef struct s_vertex {
 	size_t	y;
@@ -63,13 +63,18 @@ void		free_strs(char **strs);
 size_t		ft_strlen_mat(char **matrix);
 t_vertex	**create_vertex_matrix(size_t nb_line, char ***matrix_char);
 int			base_convert(char *convert, char *base);
+void		test_hook_key(t_window	*window);
+int			key_events(int keycode, t_window *window);
+int			shut_window(t_window *window);
 void		print_matrix(t_vertex **matrix, size_t nb_line, size_t nb_col);
 bool		is_valid_matrix(char ***matrix, size_t nb_line);
 size_t		count_point_on_line(char ***matrix);
 void		zoom(int keycode, t_window *window);
-void		fill_matrix_line(t_vertex **matrix, char ***matrix_char, size_t index_line, size_t nb_cols);
-t_vertex	**cp_matrix_vertex(t_vertex **matrix, size_t nb_line, size_t nb_cols);
-void 		malloc_matrix(size_t nb_line, size_t nb_cols, t_vertex ***matrix);
+void		fill_matrix_line(t_vertex **matrix, char ***matrix_char,
+				size_t index_line, size_t nb_cols);
+t_vertex	**cp_matrix_vertex(t_vertex **matrix, size_t nb_line,
+				size_t nb_cols);
+t_vertex	**malloc_matrix(size_t nb_line, size_t nb_cols);
 void		free_matrix_char(char ***matrix_char);
 void		free_matrix_vertex(t_window *window);
 void		free_split(char **split);
