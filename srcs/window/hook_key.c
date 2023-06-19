@@ -6,7 +6,7 @@
 /*   By: hchereau <hchereau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/16 18:20:53 by hchereau          #+#    #+#             */
-/*   Updated: 2023/06/16 19:17:37 by hchereau         ###   ########.fr       */
+/*   Updated: 2023/06/19 11:32:07 by hchereau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@ int	key_events(int keycode, t_window *window)
 	if (keycode == 65307)
 		shut_window(window);
 	zoom(keycode, window);
+	window->map.cp_matrix = cp_matrix_vertex(window->map.matrix,
+			window->map.nb_line, window->map.nb_cols);
 	return (1);
 }
 

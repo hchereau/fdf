@@ -6,7 +6,7 @@
 /*   By: hchereau <hchereau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/21 13:17:43 by hchereau          #+#    #+#             */
-/*   Updated: 2023/06/16 13:14:17 by hchereau         ###   ########.fr       */
+/*   Updated: 2023/06/19 11:15:11 by hchereau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ static	void	vertex_matrix(size_t nb_line, char ***matrix_char)
 	matrix = create_vertex_matrix(nb_line, matrix_char);
 	cp_matrix = cp_matrix_vertex(matrix, nb_line, count_p);
 	free_matrix_char(matrix_char);
-	print_matrix(cp_matrix, nb_line, count_p);
+	print_matrix(cp_matrix, nb_line, count_p, matrix);
 }
 
 static	bool	is_valid_path(int argc, char **argv)

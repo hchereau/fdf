@@ -6,26 +6,11 @@
 /*   By: hchereau <hchereau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/09 11:11:37 by hchereau          #+#    #+#             */
-/*   Updated: 2023/06/16 13:34:01 by hchereau         ###   ########.fr       */
+/*   Updated: 2023/06/19 11:04:54 by hchereau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
-
-// void malloc_matrix(size_t nb_line, size_t nb_cols, t_vertex ***matrix)
-// {
-// 	size_t	i;
-
-// 	i = 0;
-// 	*matrix = (t_vertex **)malloc(nb_line * sizeof(t_vertex *));
-// 	while(i < nb_line && matrix != NULL)
-// 	{
-// 		*matrix[i] = (t_vertex *)malloc(nb_cols * sizeof(t_vertex));
-// 		if (*matrix[i] == NULL)
-// 			break ;
-// 		++i;
-// 	}
-// }
 
 t_vertex	**malloc_matrix(size_t nb_line, size_t nb_cols)
 {

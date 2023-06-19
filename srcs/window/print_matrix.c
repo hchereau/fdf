@@ -6,7 +6,7 @@
 /*   By: hchereau <hchereau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/27 13:18:44 by hchereau          #+#    #+#             */
-/*   Updated: 2023/06/16 19:11:11 by hchereau         ###   ########.fr       */
+/*   Updated: 2023/06/19 11:34:12 by hchereau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,8 @@ static void	fill_map(t_vertex **matrix, size_t nb_line, size_t nb_col,
 	window->map.nb_line = nb_line;
 }
 
-void	print_matrix(t_vertex **matrix, size_t nb_line, size_t nb_col)
+void	print_matrix(t_vertex **cp_matrix, size_t nb_line, size_t nb_col,
+		t_vertex **matrix)
 {
 	size_t				y;
 	struct s_window		window;
@@ -79,9 +80,10 @@ void	print_matrix(t_vertex **matrix, size_t nb_line, size_t nb_col)
 	window.win_ptr = mlx_new_window(window.mlx_ptr, 800, 800, "fdf");
 	window.map.zoom = 0;
 	fill_map(matrix, nb_line, nb_col, &window);
+	window.map.cp_matrix = cp_matrix;
 	while (y < nb_line)
 	{
-		print_vertex_mtvtx(matrix[y], window, nb_col);
+		print_vertex_mtvtx(window.map.cp_matrix[y], window, nb_col);
 		++y;
 	}
 	test_hook_key(&window);

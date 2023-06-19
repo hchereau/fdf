@@ -6,7 +6,7 @@
 /*   By: hchereau <hchereau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/21 19:25:16 by hchereau          #+#    #+#             */
-/*   Updated: 2023/06/16 19:11:29 by hchereau         ###   ########.fr       */
+/*   Updated: 2023/06/19 11:01:49 by hchereau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,7 @@ typedef struct s_segment {
 
 typedef struct s_map{
 	t_vertex	**matrix;
+	t_vertex	**cp_matrix;
 	size_t		nb_line;
 	size_t		nb_cols;
 	size_t		zoom;
@@ -66,7 +67,8 @@ int			base_convert(char *convert, char *base);
 void		test_hook_key(t_window	*window);
 int			key_events(int keycode, t_window *window);
 int			shut_window(t_window *window);
-void		print_matrix(t_vertex **matrix, size_t nb_line, size_t nb_col);
+void		print_matrix(t_vertex **cp_matrix, size_t nb_line, size_t nb_col,
+				t_vertex **matrix);
 bool		is_valid_matrix(char ***matrix, size_t nb_line);
 size_t		count_point_on_line(char ***matrix);
 void		zoom(int keycode, t_window *window);
