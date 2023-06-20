@@ -6,12 +6,11 @@
 /*   By: hchereau <hchereau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/16 18:20:53 by hchereau          #+#    #+#             */
-/*   Updated: 2023/06/19 11:32:07 by hchereau         ###   ########.fr       */
+/*   Updated: 2023/06/19 14:05:49 by hchereau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
-
 
 int	shut_window(t_window *window)
 {

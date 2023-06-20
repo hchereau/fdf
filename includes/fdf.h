@@ -6,7 +6,7 @@
 /*   By: hchereau <hchereau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/21 19:25:16 by hchereau          #+#    #+#             */
-/*   Updated: 2023/06/19 11:01:49 by hchereau         ###   ########.fr       */
+/*   Updated: 2023/06/20 13:53:30 by hchereau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,10 +51,18 @@ typedef struct s_map{
 	size_t		zoom;
 }	t_map;
 
+typedef struct s_image{
+	void	*ptr_img;
+	int		bpp;
+	int		size_line;
+	int		endian;
+}	t_img;
+
 typedef struct s_window {
 	void	*mlx_ptr;
 	void	*win_ptr;
 	t_map	map;
+	t_img	img;
 }	t_window;
 
 size_t		get_nb_line(int fd);
