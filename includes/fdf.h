@@ -6,7 +6,7 @@
 /*   By: hchereau <hchereau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/21 19:25:16 by hchereau          #+#    #+#             */
-/*   Updated: 2023/06/20 13:53:30 by hchereau         ###   ########.fr       */
+/*   Updated: 2023/06/25 10:55:07 by hchereau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@
 # define CROSS		17
 # define ECHAP		53
 # define ZOOM		1
+# define HEIGHT		800
+# define WIDTH		800
 
 typedef struct s_vertex {
 	size_t	y;
@@ -53,6 +55,7 @@ typedef struct s_map{
 
 typedef struct s_image{
 	void	*ptr_img;
+	char	*addr;
 	int		bpp;
 	int		size_line;
 	int		endian;
