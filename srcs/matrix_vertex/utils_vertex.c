@@ -6,7 +6,7 @@
 /*   By: hchereau <hchereau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/01 18:03:02 by hchereau          #+#    #+#             */
-/*   Updated: 2023/06/09 10:36:29 by hchereau         ###   ########.fr       */
+/*   Updated: 2023/06/26 09:10:56 by hchereau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,8 +39,8 @@ static void	add_vertex(size_t i, char *s, t_vertex **matrix,
 	free_split(vertex_point);
 }
 
-void	fill_matrix_line(t_vertex **matrix, char ***matrix_char, size_t index_line,
-		size_t nb_cols)
+void	fill_matrix_line(t_vertex **matrix, char ***matrix_char,
+		size_t index_line, size_t nb_cols)
 {
 	size_t	i;
 
